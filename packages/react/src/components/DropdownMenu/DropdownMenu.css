@@ -1,0 +1,118 @@
+.dropdown-menu-wrapper {
+  position: relative;
+  display: inline-flex;
+  z-index: 1;
+}
+
+/* Триггер занимает только размер кнопки — позиция меню считается по кнопке, не по ячейке */
+.dropdown-menu-trigger-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-menu {
+  /* Position is set via inline styles (fixed) */
+  min-width: 180px;
+  padding: 6px;
+  background: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  box-shadow: var(--shadow-dropdown);
+  animation: dropdown-fade-in 0.15s ease;
+}
+
+/* Position is set via inline style (fixed); no top/left here to avoid conflict */
+
+@keyframes dropdown-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  outline: none;
+  box-shadow: none;
+}
+
+.dropdown-menu-item-text {
+  display: inline-block;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.dropdown-menu-item-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-secondary);
+}
+
+.dropdown-menu-item:hover:not(.dropdown-menu-item-disabled) {
+  background: var(--color-hover-bg);
+}
+
+.dropdown-menu-item-danger {
+  color: var(--color-danger);
+}
+
+.dropdown-menu-item-danger .dropdown-menu-item-icon {
+  color: var(--color-danger);
+}
+
+.dropdown-menu-item-danger .dropdown-menu-item-text {
+  color: var(--color-danger);
+}
+
+.dropdown-menu-item-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Dark mode */
+[data-theme='dark'] .dropdown-menu {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-glass-border-subtle);
+}
+
+/* Mobile: < 768px - Better touch targets */
+@media (max-width: 767px) {
+  .dropdown-menu {
+    min-width: 200px;
+    max-width: calc(100vw - 32px);
+  }
+  
+  .dropdown-menu-item {
+    padding: 12px 14px;
+    font-size: 15px;
+    min-height: 44px;
+  }
+  
+  .dropdown-menu-item-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+

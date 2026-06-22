@@ -1,0 +1,61 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: all var(--transition-base);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Mobile: < 768px - Slightly larger for better readability */
+@media (max-width: 767px) {
+  .badge {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}
+
+/* Default */
+.badge-default {
+  background: var(--color-bg-badge-default);
+  color: var(--color-text-secondary);
+}
+
+/* Success (green) */
+.badge-success {
+  background: var(--color-bg-badge-green);
+  color: var(--color-success-text);
+}
+
+/* Warning (orange) */
+.badge-warning {
+  background: var(--color-bg-badge-orange);
+  color: var(--color-warning-text);
+}
+
+/* Danger (red) */
+.badge-danger {
+  background: var(--color-bg-badge-red);
+  color: var(--color-error);
+}
+
+/* Info (blue) */
+.badge-info {
+  background: var(--color-bg-badge-blue);
+  color: var(--color-info-text);
+}
+
+.badge-pill {
+  border-radius: 999px;
+}
+
+.badge-strikethrough {
+  text-decoration: line-through;
+}
+

@@ -1,0 +1,264 @@
+/**
+ * List pages — compact toolbar (mobile + tablet, max-width 1279px)
+ * - Title row + compact create (+)
+ * - Search + filters above summary (KPI bar or summary slot)
+ */
+
+@media (max-width: 1279px) {
+  .list-page.agreements-page,
+  .list-page.partners-page,
+  .list-page.investors-page,
+  .list-page.employees-page-new,
+  .list-page.counterparties-list-page,
+  .list-page.finance-page,
+  .list-page.finance-hub-page,
+  .list-page.report-detail-page,
+  .list-page.reports-hub-page,
+  .list-page.blacklist-page,
+  .list-page.invitations-page,
+  .list-page.investor-invitations-page,
+  .agreements-page,
+  .partners-page,
+  .investors-page,
+  .employees-page-new,
+  .counterparties-list-page,
+  .counterparties-list,
+  .finance-page,
+  .finance-hub-page,
+  .report-detail-page,
+  .reports-hub-page,
+  .blacklist-page,
+  .invitations-page,
+  .investor-invitations-page {
+    /* FAB clearance only — bottom nav spacing comes from .app-layout-main */
+    padding-bottom: calc(52px + 12px);
+  }
+
+  .list-page-header,
+  .agreements-page-header,
+  .partners-page-header,
+  .investors-page-header,
+  .counterparties-list-header,
+  .employees-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 12px;
+  }
+
+  .list-page-sticky-actions,
+  .list-page-desktop-toolbar,
+  .agreements-page-toolbar,
+  .partners-page-actions,
+  .investors-page-actions,
+  .counterparties-list-actions,
+  .employees-page-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    gap: 8px;
+    flex-wrap: nowrap;
+    margin-bottom: 16px;
+  }
+
+  /* Hide desktop toolbar row in compact layout (search lives in compact toolbar above summary) */
+  .list-page-desktop-toolbar {
+    display: none;
+  }
+
+  .list-page-search {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .list-page-sticky-actions .list-filter-dropdown,
+  .partners-page-actions .list-filter-dropdown,
+  .investors-page-actions .list-filter-dropdown {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .list-page-sticky-actions .list-filter-dropdown-trigger,
+  .partners-page-actions .list-filter-dropdown-trigger,
+  .investors-page-actions .list-filter-dropdown-trigger {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0 !important;
+    justify-content: space-between;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .list-filter-dropdown-trigger-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  .list-page-toolbar-below-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .list-page-toolbar-below-summary:has(.list-filter-dropdown--compact) {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .list-page-toolbar-below-summary .list-page-search {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .list-page-toolbar-search-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .list-page-toolbar-search-row__search {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .list-page-toolbar-search-row__search .list-page-search,
+  .list-page-toolbar-search-row__search .search-input-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .list-page-toolbar-search-row__actions {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .list-page-toolbar-search-row__actions .export-button {
+    flex-shrink: 0;
+  }
+
+  /* Поиск + compact-фильтр в одной строке: search-row растягивается, фильтр компактный */
+  .list-page-toolbar-below-summary:has(.list-filter-dropdown--compact) > .list-page-toolbar-search-row,
+  .list-page-toolbar-below-summary:has(.list-filter-dropdown--compact) .list-page-toolbar-search-slot {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .list-page-toolbar-below-summary:has(.list-filter-dropdown--compact) .list-page-toolbar-search-row .list-page-search,
+  .list-page-toolbar-below-summary:has(.list-filter-dropdown--compact) .list-page-toolbar-search-row .search-input-wrapper,
+  .list-page-toolbar-below-summary:has(.list-filter-dropdown--compact) .list-page-toolbar-search-slot .list-page-search,
+  .list-page-toolbar-below-summary:has(.list-filter-dropdown--compact) .list-page-toolbar-search-slot .search-input-wrapper,
+  .list-page-toolbar-below-summary:has(.list-filter-dropdown--compact) > .list-page-search {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .list-page-toolbar-below-summary .list-filter-dropdown:not(.list-filter-dropdown--compact) {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .list-page-toolbar-below-summary .list-filter-dropdown:not(.list-filter-dropdown--compact) .list-filter-dropdown-trigger {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0 !important;
+    justify-content: space-between;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .list-page-sticky-actions .btn,
+  .partners-page-actions .btn,
+  .investors-page-actions .btn,
+  .counterparties-list-actions .btn,
+  .employees-page-actions .btn,
+  .list-page-sticky-actions button:not(.search-input-clear):not(.list-filter-dropdown-trigger):not(.list-page-create-btn),
+  .partners-page-actions button:not(.search-input-clear):not(.list-filter-dropdown-trigger):not(.list-page-create-btn),
+  .investors-page-actions button:not(.search-input-clear):not(.list-filter-dropdown-trigger):not(.list-page-create-btn),
+  .counterparties-list-actions button:not(.search-input-clear):not(.list-page-create-btn),
+  .employees-page-actions button:not(.search-input-clear):not(.list-page-create-btn) {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Inline (non-collapsible) filters: full width; collapsible triggers stay compact */
+  .report-filters-toolbar,
+  .list-page-header-toolbar,
+  .list-page-toolbar-below-summary:has(.segmented-control),
+  .list-page-toolbar-below-summary:has(.billing-period-toggle) {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .segmented-control,
+  .billing-period-toggle,
+  .report-filters-toolbar .date-period-filter,
+  .list-page-header-toolbar .date-period-filter,
+  .list-page-toolbar-below-summary .date-period-filter {
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+    margin-inline: 0;
+  }
+
+  .report-filters-toolbar .list-filter-dropdown,
+  .report-filters-toolbar .report-cash-desk-filter,
+  .report-filters-toolbar .report-investor-filter,
+  .list-page-header-toolbar .list-filter-dropdown,
+  .list-page-header-toolbar .report-cash-desk-filter,
+  .list-page-header-toolbar .report-investor-filter {
+    width: auto;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 767px) {
+  .report-filters-toolbar .date-period-filter-btn--trigger,
+  .list-page-header-toolbar .date-period-filter-btn--trigger,
+  .list-page-toolbar-below-summary .date-period-filter-btn--trigger {
+    min-height: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .list-page-sticky-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .list-page-sticky-actions .btn,
+  .list-page-sticky-actions button:not(.search-input-clear):not(.list-page-create-btn) {
+    width: auto;
+    max-width: none;
+  }
+}

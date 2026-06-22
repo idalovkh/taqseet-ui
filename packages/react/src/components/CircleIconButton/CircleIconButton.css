@@ -1,0 +1,99 @@
+.circle-icon-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 999px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.12s ease;
+}
+
+.circle-icon-button:focus {
+  outline: none;
+}
+
+.circle-icon-button:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+
+.circle-icon-button:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.circle-icon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.circle-icon-button--xs {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.circle-icon-button--sm {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.circle-icon-button--md {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.circle-icon-button--lg {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Variants */
+.circle-icon-button--bordered {
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-container);
+  color: var(--color-text-secondary);
+}
+
+.circle-icon-button--bordered:hover:not(:disabled) {
+  background: var(--color-hover-bg);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .circle-icon-button--bordered {
+  background: var(--color-bg-button-secondary);
+  border-color: var(--color-border-input-hover);
+}
+
+[data-theme='dark'] .circle-icon-button--bordered:hover:not(:disabled) {
+  background: var(--color-bg-button-secondary-hover);
+  color: var(--color-text-primary);
+}
+
+.circle-icon-button--glass {
+  border: none;
+  background: var(--color-glass-surface);
+  color: var(--color-text-on-primary);
+}
+
+.circle-icon-button--glass:hover:not(:disabled) {
+  background: var(--color-glass-surface-hover);
+  color: var(--color-text-on-primary);
+}

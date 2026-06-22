@@ -1,0 +1,61 @@
+.mobile-static-row,
+.agreement-mobile-static-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 52px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border-divider);
+  box-sizing: border-box;
+}
+
+.mobile-nav-group > .mobile-static-row:last-child,
+.mobile-nav-group > .agreement-mobile-static-row:last-child,
+.mobile-nav-group > :last-child .mobile-static-row:last-child,
+.mobile-nav-group > :last-child .agreement-mobile-static-row:last-child {
+  border-bottom: none;
+}
+
+.mobile-static-row__label,
+.agreement-mobile-static-row__label {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.mobile-static-row__value,
+.agreement-mobile-static-row__value {
+  flex-shrink: 0;
+  max-width: 55%;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-align: right;
+  line-height: 1.3;
+  word-break: break-word;
+  font-variant-numeric: tabular-nums;
+}
+
+.mobile-static-row__value--primary,
+.agreement-mobile-static-row__value--primary {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.mobile-static-row__value--amount,
+.agreement-mobile-static-row__value--amount {
+  color: var(--color-text-primary);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.mobile-group-divider,
+.agreement-mobile-group-divider {
+  height: 1px;
+  margin: 0;
+  background: var(--color-border-divider);
+  border: none;
+}

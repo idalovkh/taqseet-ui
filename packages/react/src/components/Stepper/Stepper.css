@@ -1,0 +1,73 @@
+.stepper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 32px;
+        position: relative;
+      }
+      
+      .stepper-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+      
+      .stepper-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 16px;
+        background: var(--color-bg-button-secondary);
+        color: var(--color-text-secondary);
+        border: 2px solid var(--color-border-input);
+        transition: all 0.3s;
+        z-index: 1;
+      }
+      
+      .stepper-item.completed .stepper-number {
+        background: var(--color-primary);
+        color: var(--color-text-on-primary);
+        border-color: var(--color-primary);
+      }
+      
+      .stepper-item.current .stepper-number {
+        background: var(--color-bg-container);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+      
+      .stepper-label {
+        margin-top: 8px;
+        font-size: 14px;
+        color: var(--color-text-secondary);
+        text-align: center;
+      }
+      
+      .stepper-item.completed .stepper-label,
+      .stepper-item.current .stepper-label {
+        color: var(--color-text-primary);
+        font-weight: 500;
+      }
+      
+      .stepper-line {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        right: -50%;
+        height: 2px;
+        background: var(--color-border-default);
+        z-index: 0;
+      }
+      
+      .stepper-item.completed .stepper-line {
+        background: var(--color-primary);
+      }
+      
+      .stepper-item:last-child .stepper-line {
+        display: none;
+      }

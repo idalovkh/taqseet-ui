@@ -1,0 +1,13 @@
+.page-title-row {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.page-title-row.list-page-header {
+  margin-bottom: 0;
+}
+
+.page-title-row .list-page-title {
+  font-size: 20px;
+}

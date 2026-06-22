@@ -1,0 +1,256 @@
+/**
+ * Info Card Styles
+ * Универсальные стили для карточек с информацией (детали партнёров, контрагентов, договоров)
+ */
+
+/* ===== CARD CONTAINER ===== */
+.info-card {
+  background: transparent;
+  border: 1px solid var(--color-border-card);
+  border-radius: 0;
+  padding: 20px;
+  box-shadow: none;
+}
+
+.info-card-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border-divider);
+}
+
+.info-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ===== GRID LAYOUT ===== */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.info-grid-full {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* ===== INFO ITEM ===== */
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.info-value {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  word-break: break-word;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.info-value-large {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.info-value-muted {
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* ===== LINKS ===== */
+.info-link {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.info-link:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+.info-link:active {
+  color: var(--color-primary-active);
+}
+
+.info-link--inherit {
+  color: inherit;
+}
+
+.info-link--inherit:hover {
+  color: var(--color-text-link-hover);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-numeric {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Телефонные и email ссылки */
+.info-phone,
+.info-email {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: color var(--transition-base);
+  font-weight: 500;
+}
+
+.info-phone:hover,
+.info-email:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+/* Если телефон/email внутри .info-value - не выделять жирным */
+.info-value .info-phone,
+.info-value .info-email {
+  font-weight: inherit;
+}
+
+/* ===== BADGES ===== */
+.info-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.info-badge-blue {
+  background: var(--color-bg-badge-blue);
+  color: var(--color-blue);
+}
+
+.info-badge-green {
+  background: var(--color-bg-badge-green);
+  color: var(--color-green);
+}
+
+.info-badge-orange {
+  background: var(--color-bg-badge-orange);
+  color: var(--color-orange);
+}
+
+.info-badge-red {
+  background: var(--color-bg-badge-red);
+  color: var(--color-red);
+}
+
+.info-badge-default {
+  background: var(--color-bg-badge-default);
+  color: var(--color-text-secondary);
+}
+
+/* ===== EMPTY STATE ===== */
+.info-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--color-text-tertiary);
+  font-style: italic;
+  background: transparent;
+  border-radius: 0;
+  border: 1px dashed var(--color-border-divider);
+}
+
+/* ===== LIST ITEMS ===== */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.info-list-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border-divider);
+}
+
+.info-list-item:last-child {
+  border-bottom: none;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Desktop: >= 1280px */
+@media (min-width: 1280px) {
+  .info-card {
+    padding: 24px;
+  }
+  
+  .info-grid {
+    gap: 24px;
+  }
+}
+
+/* Tablet: 768px - 1279px */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .info-card {
+    padding: 20px;
+  }
+  
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+  .info-card {
+    padding: 16px;
+  }
+  
+  .info-card-header {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+  }
+  
+  .info-card-title {
+    font-size: 16px;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .info-item {
+    gap: 4px;
+  }
+  
+  .info-label {
+    font-size: 11px;
+  }
+  
+  .info-value {
+    font-size: 15px;
+  }
+  
+  .info-value-large {
+    font-size: 17px;
+  }
+  
+  .info-list-item {
+    padding: 10px 0;
+  }
+}
+

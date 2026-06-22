@@ -1,0 +1,25 @@
+/*
+ * FullscreenModalHeader — шапка только для fullscreen-модалок.
+ * Вне скролла (скролл только в .modal-body), поэтому всегда видна и не исчезает при скролле.
+ */
+
+.fullscreen-modal-header {
+  --header-safe-top: var(--safe-top);
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  z-index: var(--z-index-header);
+  padding-top: var(--header-safe-top);
+  padding-right: 16px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  background: color-mix(in srgb, var(--color-bg-surface-elevated) 78%, transparent);
+  border-bottom: 1px solid var(--color-border-divider);
+  -webkit-backdrop-filter: saturate(1.25) blur(14px);
+  backdrop-filter: saturate(1.25) blur(14px);
+}
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .fullscreen-modal-header {
+    background: var(--color-bg-surface-elevated);
+  }
+}

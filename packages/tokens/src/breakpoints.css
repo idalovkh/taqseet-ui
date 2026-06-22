@@ -1,0 +1,175 @@
+/**
+ * Responsive Breakpoints System
+ * Mobile-first approach: default styles target mobile, then enhance for larger screens
+ * 
+ * Breakpoints (strict):
+ * - Mobile: 360-480px (default, < 768px)
+ * - Tablet: 768-1024px
+ * - Desktop: >= 1280px
+ */
+
+:root {
+  /* Breakpoint values - aligned with task requirements */
+  --breakpoint-mobile-min: 360px;
+  --breakpoint-mobile-max: 767px;
+  --breakpoint-tablet-min: 768px;
+  --breakpoint-tablet-max: 1279px;
+  --breakpoint-desktop-min: 1280px;
+  
+  /* Responsive spacing - mobile-first */
+  --spacing-xs-mobile: 4px;
+  --spacing-sm-mobile: 8px;
+  --spacing-md-mobile: 12px;
+  --spacing-lg-mobile: 16px;
+  --spacing-xl-mobile: 20px;
+  --spacing-2xl-mobile: 24px;
+  
+  --spacing-xs-tablet: 6px;
+  --spacing-sm-tablet: 12px;
+  --spacing-md-tablet: 16px;
+  --spacing-lg-tablet: 20px;
+  --spacing-xl-tablet: 24px;
+  --spacing-2xl-tablet: 32px;
+  
+  --spacing-xs-desktop: 8px;
+  --spacing-sm-desktop: 16px;
+  --spacing-md-desktop: 20px;
+  --spacing-lg-desktop: 24px;
+  --spacing-xl-desktop: 32px;
+  --spacing-2xl-desktop: 40px;
+  
+  /* Responsive typography */
+  --font-size-h1-mobile: 24px;
+  --font-size-h1-tablet: 28px;
+  --font-size-h1-desktop: 32px;
+  
+  --font-size-h2-mobile: 20px;
+  --font-size-h2-tablet: 22px;
+  --font-size-h2-desktop: 28px;
+  
+  --font-size-h3-mobile: 18px;
+  --font-size-h3-tablet: 20px;
+  --font-size-h3-desktop: 24px;
+  
+  --font-size-body-mobile: 14px;
+  --font-size-body-tablet: 14px;
+  --font-size-body-desktop: 14px;
+  
+  /* Responsive padding */
+  --page-padding-mobile: 12px;
+  --page-padding-tablet: 20px;
+  --page-padding-desktop: 24px;
+  
+  --card-padding-mobile: 12px;
+  --card-padding-tablet: 16px;
+  --card-padding-desktop: 24px;
+  
+  --modal-padding-mobile: 16px;
+  --modal-padding-tablet: 20px;
+  --modal-padding-desktop: 24px;
+  
+  /* Touch targets */
+  --touch-target-min: 44px;
+  
+  /* Container max widths */
+  --container-max-width: 1440px;
+  
+  /* Default (mobile-first) */
+  --spacing-xs: var(--spacing-xs-mobile);
+  --spacing-sm: var(--spacing-sm-mobile);
+  --spacing-md: var(--spacing-md-mobile);
+  --spacing-lg: var(--spacing-lg-mobile);
+  --spacing-xl: var(--spacing-xl-mobile);
+  --spacing-2xl: var(--spacing-2xl-mobile);
+  
+  --font-size-h1: var(--font-size-h1-mobile);
+  --font-size-h2: var(--font-size-h2-mobile);
+  --font-size-h3: var(--font-size-h3-mobile);
+  
+  --page-padding: var(--page-padding-mobile);
+  --card-padding: var(--card-padding-mobile);
+  --modal-padding: var(--modal-padding-mobile);
+}
+
+/**
+ * Media query breakpoints
+ * 
+ * Mobile: < 768px (default)
+ * Tablet: 768px - 1279px
+ * Desktop: >= 1280px
+ */
+
+/* Tablet: 768px - 1279px */
+@media (min-width: 768px) and (max-width: 1279px) {
+  :root {
+    --spacing-xs: var(--spacing-xs-tablet);
+    --spacing-sm: var(--spacing-sm-tablet);
+    --spacing-md: var(--spacing-md-tablet);
+    --spacing-lg: var(--spacing-lg-tablet);
+    --spacing-xl: var(--spacing-xl-tablet);
+    --spacing-2xl: var(--spacing-2xl-tablet);
+    
+    --font-size-h1: var(--font-size-h1-tablet);
+    --font-size-h2: var(--font-size-h2-tablet);
+    --font-size-h3: var(--font-size-h3-tablet);
+    
+    --page-padding: var(--page-padding-tablet);
+    --card-padding: var(--card-padding-tablet);
+    --modal-padding: var(--modal-padding-tablet);
+  }
+}
+
+/* Desktop: >= 1280px */
+@media (min-width: 1280px) {
+  :root {
+    --spacing-xs: var(--spacing-xs-desktop);
+    --spacing-sm: var(--spacing-sm-desktop);
+    --spacing-md: var(--spacing-md-desktop);
+    --spacing-lg: var(--spacing-lg-desktop);
+    --spacing-xl: var(--spacing-xl-desktop);
+    --spacing-2xl: var(--spacing-2xl-desktop);
+    
+    --font-size-h1: var(--font-size-h1-desktop);
+    --font-size-h2: var(--font-size-h2-desktop);
+    --font-size-h3: var(--font-size-h3-desktop);
+    
+    --page-padding: var(--page-padding-desktop);
+    --card-padding: var(--card-padding-desktop);
+    --modal-padding: var(--modal-padding-desktop);
+  }
+}
+
+/* Utility classes for responsive visibility */
+.hide-mobile {
+  display: none;
+}
+
+.hide-tablet,
+.hide-desktop {
+  display: initial;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: initial;
+  }
+  
+  .show-mobile-only {
+    display: none;
+  }
+  
+  .hide-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hide-desktop {
+    display: none;
+  }
+  
+  .show-tablet-only {
+    display: none;
+  }
+}
+

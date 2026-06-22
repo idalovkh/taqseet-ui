@@ -1,0 +1,100 @@
+/* ============================================
+   SEARCH INPUT COMPONENT
+   ============================================ */
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-bg-input);
+  border: 1px solid var(--color-border-input);
+  border-radius: 6px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* List toolbar: same corner radius as tables */
+.search-input-wrapper.list-page-search {
+  border-radius: var(--table-border-radius);
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-focus-ring);
+}
+
+.search-input-wrapper:hover:not(:focus-within) {
+  border-color: var(--color-border-input-hover);
+}
+
+.search-input-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--color-text-tertiary);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0; /* сжимается во flex — текст виден на мобильном */
+  width: 100%;
+  padding: 6px 40px 6px 32px; /* справа — место под кнопку очистки */
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.search-input-clear {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.search-input-clear:hover {
+  color: var(--color-text-secondary);
+  background: var(--color-bg-secondary);
+}
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+  .search-input {
+    height: 44px;
+    font-size: 16px; /* Prevent iOS zoom */
+    padding: 10px 44px 10px 36px; /* справа — под кнопку очистки */
+  }
+
+  .search-input-clear {
+    width: 32px;
+    height: 32px;
+    right: 4px;
+  }
+}

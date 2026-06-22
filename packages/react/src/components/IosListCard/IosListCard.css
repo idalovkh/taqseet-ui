@@ -1,0 +1,247 @@
+.ios-list-card-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding-inline: 16px;
+  box-sizing: border-box;
+}
+
+.ios-list-card {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+  cursor: default;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.ios-list-card--clickable {
+  cursor: pointer;
+}
+
+.ios-list-card__group {
+  width: 100%;
+  margin-inline: 0;
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
+.ios-list-card--warning .ios-list-card__group {
+  border-color: color-mix(in srgb, var(--color-orange, #f57c00) 45%, var(--color-border-default));
+  background: color-mix(in srgb, var(--color-orange, #f57c00) 6%, var(--color-bg-surface-elevated));
+}
+
+.ios-list-card--danger .ios-list-card__group {
+  border-color: color-mix(in srgb, var(--color-red, #e53935) 50%, var(--color-border-default));
+  background: var(--color-danger-bg);
+}
+
+.ios-list-card__hero {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--color-border-divider);
+}
+
+.ios-list-card__hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.ios-list-card__eyebrow {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.ios-list-card__title {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+}
+
+.ios-list-card__hero-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.ios-list-card__title .info-link,
+.ios-list-card__title a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.ios-list-card__hero-top .ios-list-card__badge {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
+  text-align: right;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ios-list-card__actions {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ios-list-card__actions .actions-menu-trigger {
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.ios-list-card--danger .ios-list-card__badge {
+  color: var(--color-danger);
+}
+
+.ios-list-card__group .mobile-static-row {
+  align-items: center;
+  min-height: 52px;
+  padding: 10px 16px;
+}
+
+.ios-list-card__group .mobile-static-row__label {
+  flex: 0 1 40%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ios-list-card__group .mobile-static-row__value {
+  flex: 1 1 60%;
+  max-width: none;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.ios-list-card__group .mobile-static-row__value .info-link,
+.ios-list-card__group .mobile-static-row__value a,
+.ios-list-card__group .mobile-static-row__value span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.ios-list-card-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 120px;
+  padding: 48px 24px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.ios-list-card-empty__text {
+  margin: 0;
+  width: 100%;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.ios-list-card--skeleton {
+  pointer-events: none;
+}
+
+.ios-list-card__hero--skeleton {
+  min-height: 88px;
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-subtle) 0%,
+    var(--color-hover-row) 50%,
+    var(--color-bg-subtle) 100%
+  );
+  background-size: 200% 100%;
+  animation: ios-list-card-skeleton 1.2s ease-in-out infinite;
+}
+
+.ios-list-card__row-skeleton {
+  min-height: 52px;
+  border-bottom: 1px solid var(--color-border-divider);
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-subtle) 0%,
+    var(--color-hover-row) 50%,
+    var(--color-bg-subtle) 100%
+  );
+  background-size: 200% 100%;
+  animation: ios-list-card-skeleton 1.2s ease-in-out infinite;
+}
+
+.ios-list-card__group > .ios-list-card__row-skeleton:last-child {
+  border-bottom: none;
+}
+
+@keyframes ios-list-card-skeleton {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ios-list-card__hero--skeleton,
+  .ios-list-card__row-skeleton {
+    animation: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .ios-list-card--clickable:active .ios-list-card__group {
+    opacity: 0.96;
+  }
+}

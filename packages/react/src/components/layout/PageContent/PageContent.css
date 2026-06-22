@@ -1,0 +1,62 @@
+.page-content {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.page-content__menu-back {
+  margin-bottom: 12px;
+}
+
+.page-content--workspace > .page-content__menu-back,
+.page-content--full > .page-content__menu-back {
+  flex-shrink: 0;
+}
+
+/* Ширина — на всю main-область AppLayout; узкие страницы задают max-width сами (profile и т.д.) */
+.page-content--workspace,
+.page-content--full {
+  max-width: none;
+}
+
+.page-content--workspace {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Desktop-only min-heights — prevent layout shift without forcing tall empty scroll on mobile */
+@media (min-width: 1280px) {
+  .agreements-page,
+  .partners-page,
+  .counterparties-page,
+  .counterparties-list-page,
+  .investors-page,
+  .employees-page-new,
+  .finance-page,
+  .finance-hub-page,
+  .agreement-details-page,
+  .payment-calendar-page {
+    min-height: 938px;
+  }
+
+  .reports-hub-page,
+  .report-detail-page {
+    min-height: 1040px;
+  }
+
+  .dashboard-page {
+    min-height: 1622px;
+  }
+}
+
+.list-page-toolbar-below-summary {
+  display: none;
+}
+
+@media (max-width: 1279px) {
+  .list-page-toolbar-below-summary {
+    display: flex;
+  }
+}

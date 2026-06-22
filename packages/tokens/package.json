@@ -1,0 +1,17 @@
+{
+  "name": "@taqseet-ui/tokens",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Design tokens and theme CSS for Taqseet UI",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.css",
+    "./designTokens.css": "./src/designTokens.css",
+    "./lightThemeOverrides.css": "./src/lightThemeOverrides.css",
+    "./darkModeOverrides.css": "./src/darkModeOverrides.css",
+    "./breakpoints.css": "./src/breakpoints.css"
+  },
+  "files": [
+    "src"
+  ]
+}

@@ -1,0 +1,371 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-index-modal);
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* Плавная анимация появления overlay */
+  animation: overlayFadeIn 0.2s ease-out;
+}
+
+/* Confirm dialogs must always appear above regular modals */
+.modal-overlay:has(.confirm-dialog) {
+  z-index: calc(var(--z-index-modal) + 10);
+}
+.modal-overlay::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  position: relative;
+  background: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: 28px;
+  box-shadow: var(--shadow-modal);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  /* Предотвращаем изменение размера при загрузке контента */
+  contain: layout;
+  /* Плавная анимация появления */
+  animation: modalFadeIn 0.2s ease-out;
+  /* Оптимизация производительности анимации */
+  will-change: transform, opacity;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-small {
+  max-width: min(560px, 92vw);
+}
+
+.modal-medium {
+  max-width: min(680px, 92vw);
+}
+
+.modal-large {
+  max-width: min(840px, 92vw);
+}
+
+.modal-xlarge {
+  max-width: min(1200px, 92vw);
+}
+
+/* Agreement create form: 920px for optimal density */
+.modal-agreement {
+  max-width: min(920px, 92vw);
+}
+
+/* Compact header for agreement modal */
+.modal-agreement .modal-header {
+  padding: 12px 20px;
+}
+
+.modal-agreement .modal-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+/* Passport form: same compact layout as agreement */
+.modal-passport {
+  max-width: min(920px, 92vw);
+}
+
+.modal-passport .modal-header {
+  padding: 12px 20px;
+}
+
+.modal-passport .modal-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--modal-padding);
+  border-bottom: 1px solid var(--color-border-divider);
+  flex-shrink: 0;
+  border-radius: 28px 28px 0 0;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.modal-body {
+  padding: var(--modal-padding);
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  min-height: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.modal-body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Allow modal body without padding for custom layouts */
+.modal-body:has(.change-access-modal),
+.modal-body:has(.custom-modal-layout),
+.modal-body:has(.agreement-create-form--compact),
+.modal-body:has(.passport-form--compact),
+.modal-body:has(.person-create-form--compact) {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Модалка пикера — только max-height, высота по контенту (нет пустого места) */
+.modal-overlay.modal-overlay--person-picker {
+  overflow: hidden;
+}
+
+.modal-content.modal-content--person-picker {
+  max-height: min(90vh, 720px);
+  contain: none;
+}
+
+/* Для picker на desktop/tablet скроллится только внутренний список */
+.modal-body.modal-body--person-picker {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Desktop: >= 1024px - Larger, more comfortable modals */
+@media (min-width: 1024px) {
+  .modal-overlay {
+    padding: 24px;
+  }
+
+  .modal-small {
+    max-width: 620px;
+  }
+
+  .modal-medium {
+    max-width: 760px;
+  }
+
+  .modal-large {
+    max-width: 920px;
+  }
+
+  .modal-xlarge {
+    max-width: 1280px;
+  }
+
+  .modal-agreement {
+    max-width: 920px;
+  }
+
+  .modal-passport {
+    max-width: 920px;
+  }
+}
+
+/* Large Desktop: >= 1280px */
+@media (min-width: 1280px) {
+  .modal-overlay {
+    padding: 32px;
+  }
+}
+
+/* Tablet: 768px - 1279px */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .modal-overlay {
+    padding: 20px;
+  }
+
+  .modal-small,
+  .modal-medium {
+    max-width: 90vw;
+  }
+
+  .modal-large {
+    max-width: 95vw;
+  }
+
+  .modal-xlarge {
+    max-width: 95vw;
+  }
+
+  .modal-agreement {
+    max-width: min(920px, 95vw);
+  }
+
+  .modal-passport {
+    max-width: min(920px, 95vw);
+  }
+}
+
+/* Mobile: <= 768px */
+@media (max-width: 768px) {
+  .modal-overlay {
+    z-index: var(--z-index-fullscreen-overlay);
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .modal-content {
+    max-height: 95vh;
+    border-radius: 28px 28px 0 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Compact centered dialog for short confirmations on mobile */
+  .modal-overlay.modal-mobile-centered {
+    align-items: center;
+    padding: 16px;
+  }
+
+  .modal-content.modal-mobile-centered {
+    width: min(420px, 92vw);
+    max-width: min(420px, 92vw);
+    max-height: min(80vh, 560px);
+    border-radius: 20px;
+  }
+
+  /* Centered compact dialogs: header height follows text, not touch target */
+  .modal-content.modal-mobile-centered .modal-header {
+    position: static;
+    align-items: flex-start;
+    padding: 12px 14px 10px;
+  }
+
+  .modal-content.modal-mobile-centered .modal-title {
+    font-size: 16px;
+    line-height: 1.35;
+    padding-right: 6px;
+  }
+
+  .modal-content.modal-mobile-centered .modal-body {
+    padding: 12px 14px 14px;
+  }
+
+  .modal-small,
+  .modal-medium,
+  .modal-large,
+  .modal-xlarge {
+    max-width: 100%;
+  }
+
+  .modal-header {
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    background: var(--color-bg-surface-elevated);
+    z-index: 1;
+  }
+
+  .modal-title {
+    font-size: 18px;
+    padding-right: 8px;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  /* Fullscreen: как app layout — overlay выше дропдаунов (--z-index-fullscreen-overlay) */
+  .modal-overlay.modal-fullscreen-mobile {
+    align-items: stretch;
+    padding: 0;
+    overflow: hidden;
+    /* Без transform/filter, чтобы position:sticky работал у потомков */
+  }
+
+  /*
+   * Контейнер fullscreen: 100dvh, flex-колонка, без скролла.
+   * Шапка вне скролла (flex: 0 0 auto) — всегда видна. Скролл только в .modal-body.
+   */
+  .modal-content.modal-fullscreen-mobile {
+    max-height: none;
+    min-height: 100dvh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    contain: none;
+    will-change: auto;
+    animation: none;
+  }
+
+  /* body: единственная скроллируемая область; шапка не скроллится и не исчезает; отступ от шапки */
+  .modal-content.modal-fullscreen-mobile .modal-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    padding-top: 12px;
+    padding-bottom: 16px;
+  }
+
+  /* Compact form: свой скролл в form-body, modal-body не скроллит */
+  .modal-content.modal-fullscreen-mobile .modal-body:has(.agreement-create-form--compact),
+  .modal-content.modal-fullscreen-mobile .modal-body:has(.passport-form--compact),
+  .modal-content.modal-fullscreen-mobile .modal-body:has(.person-create-form--compact) {
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+
+  /* Fullscreen picker: modal-body — flex-контейнер для flex-цепочки скролла */
+  .modal-content.modal-fullscreen-mobile .modal-body.modal-body--person-picker {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    padding-bottom: 16px;
+  }
+
+  /* кастомные layout в fullscreen */
+  .modal-content.modal-fullscreen-mobile .modal-body:has(.change-access-modal),
+  .modal-content.modal-fullscreen-mobile .modal-body:has(.custom-modal-layout) {
+    padding-bottom: 16px;
+  }
+}

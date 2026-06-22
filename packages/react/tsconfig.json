@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/shared/components/ui/*": ["./src/components/*"],
+      "@/shared/components/layout/*": ["./src/components/layout/*"],
+      "@/shared/hooks/*": ["./src/hooks/*"],
+      "@/shared/contexts/*": ["./src/contexts/*"],
+      "@/shared/utils/*": ["./src/utils/*"],
+      "@/shared/config/*": ["./src/config/*"],
+      "@/shared/constants/*": ["./src/constants/*"],
+      "@/shared/providers/*": ["./src/providers/*"]
+    }
+  },
+  "include": ["src", ".storybook", "tests"]
+}

@@ -1,0 +1,215 @@
+/**
+ * Responsive Utilities
+ * Helper classes for responsive design
+ */
+
+/* ===== OVERFLOW PREVENTION ===== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Prevent horizontal scroll on page shells (avoid broad [class*="-page"] — breaks nested scroll) */
+.container,
+.page-container,
+.page-container-with-surface,
+.page-content {
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* ===== RESPONSIVE GRID UTILITIES ===== */
+.responsive-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.responsive-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.responsive-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.responsive-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ===== RESPONSIVE FLEX UTILITIES ===== */
+.responsive-flex {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.responsive-flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* ===== TEXT UTILITIES ===== */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-wrap {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ===== SPACING UTILITIES ===== */
+.spacing-mobile {
+  padding: var(--spacing-md);
+}
+
+.spacing-tablet {
+  padding: var(--spacing-lg);
+}
+
+.spacing-desktop {
+  padding: var(--spacing-xl);
+}
+
+/* ===== TABLET: 768px - 1279px ===== */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .responsive-grid-3,
+  .responsive-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hide-on-tablet {
+    display: none !important;
+  }
+  
+  .show-on-tablet {
+    display: block !important;
+  }
+}
+
+/* ===== MOBILE: < 768px ===== */
+@media (max-width: 767px) {
+  /* All grids become single column on mobile */
+  .responsive-grid-2,
+  .responsive-grid-3,
+  .responsive-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .responsive-grid {
+    gap: var(--spacing-md);
+  }
+  
+  /* Flex becomes column on mobile */
+  .responsive-flex {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  /* Visibility utilities */
+  .hide-on-mobile {
+    display: none !important;
+  }
+  
+  .show-on-mobile {
+    display: block !important;
+  }
+  
+  /* Full width on mobile */
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  /* Stack buttons on mobile */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+  }
+  
+  .button-group button,
+  .button-group a {
+    width: 100%;
+    min-height: 48px;
+  }
+  
+  /* Touch targets — only controls, not inline text links */
+  button:not(.theme-toggle-switch--row):not(.assistant-fab):not(.bottom-nav-item):not(.app-header-menu-button):not(.app-header-icon-button):not(.list-page-create-btn):not(.gender-select__option),
+  a[role="button"],
+  a.btn,
+  .clickable,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+  
+  /* Prevent zoom on input focus (iOS) */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* ===== DESKTOP: >= 1280px ===== */
+@media (min-width: 1280px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+  
+  .show-on-desktop {
+    display: block !important;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+}
+
+/* Settings list tables — без «коробки» вокруг iOS-карточек на touch */
+@media (max-width: 1279px) {
+  .employees-table-wrapper,
+  .invitations-page-content,
+  .investor-invitations-page-content {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+}
+
+[data-theme='dark'] .employees-table-wrapper,
+[data-theme='dark'] .invitations-page-content,
+[data-theme='dark'] .investor-invitations-page-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+

@@ -1,0 +1,43 @@
+.menu-back-link {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-surface-elevated);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  box-sizing: border-box;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button.menu-back-link {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.menu-back-link:hover {
+  color: var(--color-text-primary);
+  background: var(--color-hover-row);
+  border-color: var(--color-border-input-hover);
+}
+
+.menu-back-link:active {
+  background: var(--color-hover-bg);
+}
+
+.menu-back-link:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}

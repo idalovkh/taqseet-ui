@@ -1,0 +1,254 @@
+/**
+ * Shared list page filter dropdowns (single + combined).
+ */
+
+.list-filter-dropdown {
+  display: inline-flex;
+  align-items: center;
+}
+
+.list-filter-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-container);
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  outline: none;
+  white-space: nowrap;
+}
+
+.list-filter-dropdown-trigger:hover {
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+.list-filter-dropdown-trigger[aria-expanded="true"] {
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+.list-filter-dropdown-trigger-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+.list-filter-dropdown-trigger[aria-expanded="true"] .list-filter-dropdown-trigger-icon {
+  transform: rotate(180deg);
+}
+
+.list-filter-dropdown-panel {
+  width: 280px;
+  padding: 8px 0;
+  background: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  box-shadow: var(--shadow-dropdown);
+  animation: list-filter-dropdown-fade 0.15s ease;
+  box-sizing: border-box;
+}
+
+@keyframes list-filter-dropdown-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list-filter-dropdown-options {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 0;
+}
+
+.list-filter-dropdown-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.list-filter-dropdown-option:hover {
+  background: var(--color-bg-hover);
+}
+
+.list-filter-dropdown-option.selected {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.list-filter-dropdown-option-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.list-filter-dropdown-option-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-secondary);
+}
+
+.list-filter-dropdown-group-title {
+  margin: 0;
+  padding: 10px 16px 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+}
+
+.list-filter-dropdown-group--bordered {
+  border-top: 1px solid var(--color-border-default);
+  margin-top: 4px;
+  padding-top: 4px;
+}
+
+.list-filter-dropdown-panel--combined {
+  max-height: min(70vh, 420px);
+  overflow-y: auto;
+}
+
+.list-filter-dropdown--combined {
+  /* marker class */
+}
+
+.list-filter-dropdown--compact {
+  flex-shrink: 0;
+}
+
+.list-filter-dropdown--compact .list-filter-dropdown-trigger {
+  position: relative;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+  justify-content: center;
+  gap: 0;
+}
+
+.list-filter-dropdown-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--color-text-primary);
+  color: var(--color-bg-container);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .list-filter-dropdown:not(.list-filter-dropdown--compact):not(.list-filter-dropdown--toolbar-compact) {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .list-filter-dropdown:not(.list-filter-dropdown--compact):not(.list-filter-dropdown--toolbar-compact) .list-filter-dropdown-trigger {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0 !important;
+  }
+
+  .list-filter-dropdown--toolbar-compact {
+    display: inline-flex;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .list-filter-dropdown:not(.list-filter-dropdown--toolbar-compact) .list-filter-dropdown-trigger-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* Toolbar cash desk filter — match date-period shortcut chip size */
+.list-filter-dropdown--toolbar-compact .list-filter-dropdown-trigger {
+  box-sizing: border-box;
+  height: auto;
+  min-height: unset;
+  min-width: unset;
+  padding: 6px 10px;
+  gap: 6px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.list-filter-dropdown--toolbar-compact .list-filter-dropdown-trigger-label {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.list-filter-dropdown--toolbar-compact .list-filter-dropdown-trigger-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 767px) {
+  .list-filter-dropdown--toolbar-compact .list-filter-dropdown-trigger {
+    padding: 2px 7px;
+    font-size: 11px;
+    line-height: 1.15;
+    border-radius: 5px;
+    gap: 4px;
+  }
+
+  .list-filter-dropdown--toolbar-compact .list-filter-dropdown-trigger-icon svg {
+    width: 10px;
+    height: 10px;
+  }
+}

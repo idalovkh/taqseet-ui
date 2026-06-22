@@ -1,0 +1,514 @@
+/**
+ * Design Tokens - извлечены из cringe-taqseet-manager-app
+ * Семантические токены для визуального дизайна
+ */
+
+:root,
+:root[data-theme='light'] {
+  /* ===== ЦВЕТОВАЯ ПАЛИТРА (Light Theme) ===== */
+
+  /* Фоны - СТРОГИЙ БЕЛЫЙ для Light Theme */
+  --color-bg-base: #ffffff;
+  --color-bg-container: #ffffff;
+  --color-bg-layout: #ffffff;
+  --color-bg-sidebar: #ffffff;
+  --color-bg-surface-elevated: #ffffff;
+  --color-bg-input: #ffffff;
+  --color-bg-table-header: #ffffff;
+  --color-bg-table-row-hover: rgba(0, 0, 0, 0.02);
+  --color-bg-table-row-zebra: #ffffff;
+  --color-bg-button-secondary: #ffffff;
+  --color-bg-button-secondary-hover: #f8f8f8;
+  --color-bg-button-secondary-active: #f0f0f0;
+  --color-bg-secondary: #f9fafb;
+  --color-bg-tertiary: #f3f4f6;
+  --color-bg-subtle: var(--color-bg-tertiary);
+  --color-bg-hover: rgba(0, 0, 0, 0.04);
+  --color-bg-badge-red: #fef2f2;
+  --color-bg-badge-green: #f0fdf4;
+  --color-bg-badge-orange: #fff7ed;
+  --color-bg-badge-blue: #eff6ff;
+  --color-bg-badge-default: #f9fafb;
+
+  /* Текст */
+  --color-text-primary: rgba(0, 0, 0, 0.85);
+  --color-text-secondary: rgba(0, 0, 0, 0.65);
+  --color-text-tertiary: rgba(0, 0, 0, 0.45);
+  --color-text-placeholder: rgba(0, 0, 0, 0.35);
+  --color-text-on-primary: #ffffff;
+  --color-text-on-danger: #ffffff;
+  --color-text-link: #1890ff;
+  --color-text-link-hover: #40a9ff;
+
+  /* Границы - ЧЕТКИЕ */
+  --color-border-default: rgba(0, 0, 0, 0.12);
+  --color-border-input: rgba(0, 0, 0, 0.20);
+  --color-border-input-hover: rgba(0, 0, 0, 0.28);
+  --color-border-table: rgba(0, 0, 0, 0.12);
+  --color-border-table-header: rgba(0, 0, 0, 0.15);
+  --color-border-card: rgba(0, 0, 0, 0.12);
+  --color-border-divider: rgba(0, 0, 0, 0.12);
+  --color-border: var(--color-border-default);
+
+  /* Ховер */
+  --color-hover-row: rgba(0, 0, 0, 0.02);
+  --color-hover-bg: rgba(0, 0, 0, 0.04);
+
+  /* Фокус */
+  --color-focus-ring: rgba(10, 31, 51, 0.3);
+
+  /* Disabled */
+  --color-disabled-bg: #ffffff;
+  --color-disabled-text: rgba(0, 0, 0, 0.25);
+  --color-disabled-border: rgba(0, 0, 0, 0.12);
+
+  /* Тени - ОТКЛЮЧЕНЫ для белого фона */
+  --shadow-card: none;
+  --shadow-header: none;
+  --shadow-dropdown: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow-modal: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+  /* Индикаторы */
+  --color-red: #ff4d4f;
+  --color-green: #52c41a;
+  --color-orange: #fa8c16;
+  --color-blue: #1890ff;
+
+  /* Primary Actions - TAQSEET BRAND NAVY */
+  --color-primary: #163A5F;
+  --color-primary-hover: #1d4975;
+  --color-primary-active: #0f2a48;
+  --color-primary-text: #ffffff;
+
+  /* Button semantics */
+  --color-button-primary-border: var(--color-primary-border-muted);
+  --color-button-primary-highlight: rgba(255, 255, 255, 0.14);
+  --color-button-primary-shadow: var(--shadow-primary-sm);
+  --color-button-primary-shadow-hover: var(--shadow-primary-md);
+  --color-button-secondary-bg: var(--color-bg-button-secondary);
+  --color-button-secondary-border: var(--color-border-input);
+  --color-button-secondary-hover-bg: var(--color-bg-button-secondary-hover);
+  --color-button-secondary-hover-border: var(--color-border-input-hover);
+  --color-button-secondary-active-bg: var(--color-bg-button-secondary-active);
+  --color-button-spinner-track: rgba(255, 255, 255, 0.35);
+  --color-button-spinner-track-muted: var(--color-spinner-track);
+  --color-button-active-inset-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12);
+  --color-button-danger-highlight: rgba(255, 255, 255, 0.14);
+
+  /* Danger Actions */
+  --color-danger: #ff4d4f;
+  --color-danger-hover: #ff7875;
+  --color-danger-active: #d9363e;
+  --color-danger-bg: #fff1f0;
+  --color-error: var(--color-danger);
+  --color-error-bg: var(--color-danger-bg);
+
+  /* Success Actions */
+  --color-success: #10b981;
+  --color-success-bg: #d1fae5;
+  --color-success-text: #065f46;
+
+  /* Warning Actions */
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fef3c7;
+  --color-warning-text: #92400e;
+
+  /* Info Actions */
+  --color-info: #163A5F;
+  --color-info-bg: #e6ebf0;
+  --color-info-text: #0f2a48;
+  --color-primary-bg: #e6ebf0;
+  --color-surface: var(--color-bg-surface-elevated);
+  --color-overlay-backdrop: rgba(16, 24, 40, 0.08);
+  --color-sidebar-backdrop: rgba(16, 24, 40, 0.08);
+  --color-header-glass: rgba(255, 255, 255, 0.92);
+  --color-modal-backdrop: rgba(0, 0, 0, 0.25);
+  --color-paywall-backdrop: rgba(15, 23, 42, 0.55);
+  --color-media-backdrop: rgba(0, 0, 0, 0.9);
+  --color-glass-border: rgba(255, 255, 255, 0.3);
+  --color-glass-border-subtle: rgba(255, 255, 255, 0.18);
+  --color-glass-border-strong: rgba(255, 255, 255, 0.42);
+  --color-glass-surface: rgba(255, 255, 255, 0.15);
+  --color-glass-surface-hover: rgba(255, 255, 255, 0.25);
+  --color-glass-surface-strong: rgba(255, 255, 255, 0.28);
+  --color-glass-gradient-stop: rgba(255, 255, 255, 0.38);
+  --color-text-on-glass: rgba(255, 255, 255, 0.85);
+  --color-primary-emphasis: rgba(22, 58, 95, 0.85);
+  --color-primary-border-subtle: rgba(22, 58, 95, 0.14);
+  --color-primary-border-muted: rgba(22, 58, 95, 0.18);
+  --color-primary-border-strong: rgba(22, 58, 95, 0.5);
+  --color-primary-bg-subtle: rgba(22, 58, 95, 0.03);
+  --color-primary-bg-muted: rgba(22, 58, 95, 0.06);
+  --color-link-bg-subtle: rgba(24, 144, 255, 0.05);
+  --color-link-border-subtle: rgba(24, 144, 255, 0.15);
+  --color-row-highlight: rgba(0, 0, 0, 0.015);
+  --color-row-hover-subtle: rgba(0, 0, 0, 0.03);
+  --color-warning-row-bg: rgba(251, 191, 36, 0.15);
+  --color-danger-row-bg: rgba(239, 68, 68, 0.15);
+  --color-danger-row-bg-subtle: rgba(239, 68, 68, 0.025);
+  --color-danger-row-bg-muted: rgba(239, 68, 68, 0.05);
+  --color-danger-border-subtle: rgba(239, 68, 68, 0.35);
+  --color-danger-bg-subtle: rgba(239, 68, 68, 0.08);
+  --color-success-row-bg: rgba(16, 185, 129, 0.1);
+  --color-warning-row-bg-muted: rgba(245, 158, 11, 0.1);
+  --color-danger-row-bg-muted-alt: rgba(239, 68, 68, 0.1);
+  --color-neutral-row-bg: rgba(107, 114, 128, 0.1);
+  --color-muted-row-bg: rgba(156, 163, 175, 0.1);
+  --color-orange-badge-bg: rgba(230, 126, 34, 0.08);
+  --color-orange-badge-border: rgba(230, 126, 34, 0.25);
+  --color-orange-badge-bg-hover: rgba(230, 126, 34, 0.14);
+  --color-orange-badge-border-hover: rgba(230, 126, 34, 0.45);
+  --color-orange-badge-bg-active: rgba(230, 126, 34, 0.2);
+  --color-success-bg-subtle: rgba(34, 197, 94, 0.1);
+  --color-spinner-track: rgba(102, 126, 234, 0.2);
+  --color-text-emphasis: rgba(0, 0, 0, 0.78);
+  --color-text-body-muted: rgba(0, 0, 0, 0.55);
+  --color-text-paywall-title: rgba(0, 0, 0, 0.88);
+  --color-text-paywall-body: rgba(0, 0, 0, 0.72);
+  --shadow-primary-sm: 0 2px 8px rgba(22, 58, 95, 0.3);
+  --shadow-primary-md: 0 4px 12px rgba(22, 58, 95, 0.4);
+  --shadow-brand-sm: 0 14px 36px rgba(15, 42, 72, 0.08);
+  --shadow-brand-md: 0 10px 24px rgba(15, 42, 72, 0.08);
+  --shadow-brand-lg: 0 12px 28px rgba(15, 42, 72, 0.28), 0 3px 8px rgba(0, 0, 0, 0.18);
+  --shadow-brand-lg-hover: 0 16px 32px rgba(15, 42, 72, 0.34), 0 4px 10px rgba(0, 0, 0, 0.2);
+  --shadow-brand-panel: 0 8px 32px rgba(0, 0, 0, 0.16), 0 2px 8px var(--color-border-default);
+  --shadow-brand-drop: 0 14px 18px rgba(15, 42, 72, 0.24);
+  --shadow-brand-card: 0 6px 18px rgba(0, 0, 0, 0.1);
+  --shadow-brand-panel-lg: 0 8px 24px rgba(0, 0, 0, 0.14);
+  --shadow-subtle-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-subtle-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-subtle-md: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-paywall: 0 20px 50px rgba(0, 0, 0, 0.2);
+  --shadow-finance-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-pagination-active: 0 2px 8px rgba(59, 130, 246, 0.35);
+  --shadow-focus-error: 0 0 0 2px rgba(220, 53, 69, 0.2);
+  --shadow-focus-warning: 0 0 0 2px rgba(255, 168, 74, 0.2);
+  --shadow-focus-error-lg: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  --shadow-focus-success: 0 0 0 2px rgba(32, 214, 107, 0.18);
+  --shadow-heatmap-today: inset 0 0 0 1px color-mix(in srgb, var(--color-info) 40%, transparent);
+  --shadow-heatmap-selected: inset 0 0 6px color-mix(in srgb, var(--color-info) 25%, transparent), inset 0 0 0 1px color-mix(in srgb, var(--color-info) 50%, transparent);
+
+  /* Chart & Skeleton */
+  --color-chart-axis: #6b7280;
+  --color-chart-grid: #e5e7eb;
+  --color-chart-cursor: rgba(0, 0, 0, 0.06);
+  --color-skeleton-from: #e2e8f0;
+  --color-skeleton-to: #f1f5f9;
+
+  /* ===== РАЗМЕРЫ ===== */
+
+  /* Header */
+  --header-height: 64px;
+  --header-height-mobile: 56px;
+  --header-padding-mobile: 0 12px;
+  --header-padding-tablet: 0 20px;
+  --header-padding-desktop: 0 24px;
+  --header-gap-mobile: 8px;
+  --header-gap-tablet: 12px;
+  --header-gap-desktop: 16px;
+
+  /* Sidebar */
+  --sidebar-width-full: 280px;
+  --sidebar-width-compact: 72px;
+  --sidebar-width-min: 200px;
+  --sidebar-width-max: 320px;
+  --sidebar-width-mobile: 280px;
+
+  /* Карточки - СТРОГИЕ */
+  --card-padding-dark: 20px;
+  --card-padding-light: 24px;
+  --card-border-radius: 4px;
+  --summary-border-radius: 16px;
+  --table-border-radius: 16px;
+  --card-body-padding: 12px;
+
+  /* Контент — padding задаёт AppShell (app-layout-main) */
+  --content-padding: var(--page-padding);
+  --content-padding-mobile: var(--page-padding-mobile);
+  --content-padding-tablet: var(--page-padding-tablet);
+  --content-padding-desktop: var(--page-padding-desktop);
+  --content-padding-hidden: 8px;
+  --content-margin-top: 64px;
+  --content-margin-top-mobile: 56px;
+
+  /* ===== ТИПОГРАФИКА ===== */
+
+  /* Шрифты */
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+  /* Размеры шрифтов */
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+
+  /* Веса шрифтов - СТРОГАЯ ИЕРАРХИЯ */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ===== ОТСТУПЫ ===== */
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+
+  /* ===== ПЕРЕХОДЫ ===== */
+
+  --transition-base: 0.2s ease;
+  --transition-sidebar: 0.3s ease;
+  --transition-theme: 0.3s ease;
+
+  /* ===== Z-INDEX ===== */
+
+  --z-index-header: 1000;
+  --z-index-sidebar: 999;
+  --z-index-sidebar-overlay: 998;
+  --z-index-dropdown: 1001;
+  --z-index-modal: 1100;
+  /** Popovers / anchored overlays above modal content */
+  --z-index-popover: 1150;
+  /** Fullscreen modal overlay — выше дропдаунов (1100), чтобы модалка не перекрывалась порталами в body */
+  --z-index-fullscreen-overlay: 1200;
+
+  /* ===== LEGACY ALIASES (migration layer) ===== */
+  --color-text: var(--color-text-primary);
+  --color-background: var(--color-bg-layout);
+  --color-secondary: var(--color-bg-secondary);
+  --color-secondary-hover: var(--color-bg-tertiary);
+  --color-danger-dark: var(--color-danger-active);
+  --color-danger-light: var(--color-danger-bg);
+  --color-primary-dark: var(--color-primary-active);
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --text-tertiary: var(--color-text-tertiary);
+  --border-color: var(--color-border-default);
+  --error-color: var(--color-danger);
+  --primary-color: var(--color-primary);
+  --disabled-bg: var(--color-disabled-bg);
+  --color-bg-disabled: var(--color-disabled-bg);
+  --color-background-secondary: var(--color-bg-secondary);
+  --radius-sm: 2px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 12px 36px rgba(0, 0, 0, 0.14);
+  --transition-fast: 0.15s ease;
+  --transition-slow: 0.3s ease;
+}
+
+/* ===== DARK THEME ===== */
+[data-theme='dark'] {
+  /* Фоны - Telegram-like тёмная глубина */
+  --color-bg-layout: #17212b;
+  --color-bg-base: #17212b;
+  --color-bg-sidebar: #1f2a36;
+  --color-bg-container: #1e2a38;
+  --color-bg-surface-elevated: #243447;
+  --color-bg-input: #1e2a38;
+  --color-bg-table-header: #27384a;
+  --color-bg-table-row-hover: rgba(255, 255, 255, 0.09);
+  --color-bg-table-row-zebra: #1b2633;
+  --color-bg-button-secondary: #2a3949;
+  --color-bg-button-secondary-hover: #314457;
+  --color-bg-button-secondary-active: #223141;
+  --color-bg-secondary: #1b2633;
+  --color-bg-tertiary: #2a3949;
+  --color-bg-subtle: var(--color-bg-tertiary);
+  --color-bg-hover: rgba(255, 255, 255, 0.1);
+  --color-bg-badge-red: #402225;
+  --color-bg-badge-green: #1e3b34;
+  --color-bg-badge-orange: #3f321e;
+  --color-bg-badge-blue: #1f3348;
+  --color-bg-badge-default: #2a3949;
+
+  /* Текст - УЛУЧШЕННАЯ ЧИТАЕМОСТЬ */
+  --color-text-primary: #e7edf5;
+  --color-text-secondary: #b8c5d3;
+  --color-text-tertiary: #8da0b3;
+  --color-text-placeholder: #72859a;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-danger: #ffffff;
+  --color-text-link: #77b6ff;
+  --color-text-link-hover: #9bc9ff;
+
+  /* Границы - УСИЛЕННАЯ ВИДИМОСТЬ */
+  --color-border-default: rgba(200, 218, 236, 0.2);
+  --color-border-input: rgba(200, 218, 236, 0.28);
+  --color-border-input-hover: rgba(200, 218, 236, 0.36);
+  --color-border-table: rgba(255, 255, 255, 0.18);
+  --color-border-table-header: rgba(255, 255, 255, 0.22);
+  --color-border-card: rgba(200, 218, 236, 0.18);
+  --color-border-divider: rgba(200, 218, 236, 0.14);
+  --color-border: var(--color-border-default);
+
+  /* Ховер - ВЫРАЖЕННЫЕ СОСТОЯНИЯ */
+  --color-hover-row: rgba(255, 255, 255, 0.09);
+  --color-hover-bg: rgba(255, 255, 255, 0.12);
+
+  /* Фокус - ЯРКИЙ И ВИДИМЫЙ */
+  --color-focus-ring: rgba(104, 165, 255, 0.32);
+
+  /* Disabled */
+  --color-disabled-bg: rgba(200, 218, 236, 0.08);
+  --color-disabled-text: rgba(231, 237, 245, 0.45);
+  --color-disabled-border: rgba(200, 218, 236, 0.16);
+
+  /* Тени - ГЛУБОКИЕ */
+  --shadow-card: 0 6px 20px rgba(6, 14, 24, 0.45);
+  --shadow-header: 0 4px 16px rgba(6, 14, 24, 0.4);
+  --shadow-dropdown: 0 14px 36px rgba(6, 14, 24, 0.55);
+  --shadow-modal: 0 20px 52px rgba(6, 14, 24, 0.6);
+
+  /* Индикаторы - ПРИГЛУШЕННЫЕ ДЛЯ ТЕМНОЙ ТЕМЫ */
+  --color-red: #f87171;
+  --color-green: #34d399;
+  --color-orange: #f59e0b;
+  --color-blue: #77b6ff;
+
+  /* Primary Actions - TAQSEET BRAND NAVY */
+  --color-primary: #163A5F;              /* Medium navy с контрастом */
+  --color-primary-hover: #1d4975;        /* Светлее на hover */
+  --color-primary-active: #0f2a48;       /* Темнее на active */
+  --color-primary-text: #ffffff;         /* Белый текст */
+
+  /* Button semantics */
+  --color-button-primary-border: var(--color-primary-border-subtle);
+  --color-button-primary-highlight: rgba(255, 255, 255, 0.1);
+  --color-button-primary-shadow: 0 2px 10px rgba(6, 14, 24, 0.5);
+  --color-button-primary-shadow-hover: 0 4px 14px rgba(6, 14, 24, 0.58);
+  --color-button-secondary-bg: transparent;
+  --color-button-secondary-border: var(--color-border-input-hover);
+  --color-button-secondary-hover-bg: var(--color-primary-bg-subtle);
+  --color-button-secondary-hover-border: var(--color-primary-border-subtle);
+  --color-button-secondary-active-bg: var(--color-primary-bg-muted);
+  --color-button-spinner-track: rgba(255, 255, 255, 0.35);
+  --color-button-spinner-track-muted: rgba(141, 160, 179, 0.35);
+  --color-button-active-inset-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
+  --color-button-danger-highlight: rgba(255, 255, 255, 0.1);
+
+  /* Danger Actions - ВИДИМЫЕ НО НЕ КИСЛОТНЫЕ */
+  --color-danger: #f06464;
+  --color-danger-hover: #f58a8a;
+  --color-danger-active: #d94f4f;
+  --color-danger-bg: #3b2025;
+  --color-error: var(--color-danger);
+  --color-error-bg: var(--color-danger-bg);
+
+  /* Success Actions - ВИДИМЫЙ ЗЕЛЕНЫЙ */
+  --color-success: #34d399;
+  --color-success-bg: #1d3a34;
+  --color-success-text: #7ce7c2;
+
+  /* Warning Actions - ВИДИМЫЙ ОРАНЖЕВЫЙ */
+  --color-warning: #f6b04a;
+  --color-warning-bg: #3d2f1f;
+  --color-warning-text: #ffd089;
+
+  /* Info Actions - BRAND NAVY */
+  --color-info: #5fa8ff;
+  --color-info-bg: #203247;
+  --color-info-text: #c7dcf4;
+  --color-primary-bg: #203247;
+  --color-surface: var(--color-bg-surface-elevated);
+  --color-overlay-backdrop: rgba(6, 14, 24, 0.62);
+  --color-sidebar-backdrop: rgba(6, 14, 24, 0.45);
+  --color-header-glass: rgba(36, 52, 71, 0.9);
+  --color-modal-backdrop: rgba(0, 0, 0, 0.55);
+  --color-paywall-backdrop: rgba(6, 14, 24, 0.72);
+  --color-media-backdrop: rgba(0, 0, 0, 0.92);
+  --color-glass-border: rgba(255, 255, 255, 0.24);
+  --color-glass-border-subtle: rgba(255, 255, 255, 0.14);
+  --color-glass-border-strong: rgba(255, 255, 255, 0.36);
+  --color-glass-surface: rgba(255, 255, 255, 0.1);
+  --color-glass-surface-hover: rgba(255, 255, 255, 0.18);
+  --color-glass-surface-strong: rgba(255, 255, 255, 0.22);
+  --color-glass-gradient-stop: rgba(255, 255, 255, 0.28);
+  --color-text-on-glass: rgba(255, 255, 255, 0.88);
+  --color-primary-emphasis: var(--color-text-link);
+  --color-primary-border-subtle: rgba(147, 197, 253, 0.28);
+  --color-primary-border-muted: rgba(148, 163, 184, 0.34);
+  --color-primary-border-strong: rgba(147, 197, 253, 0.55);
+  --color-primary-bg-subtle: rgba(37, 99, 235, 0.12);
+  --color-primary-bg-muted: rgba(37, 99, 235, 0.18);
+  --color-link-bg-subtle: rgba(95, 168, 255, 0.12);
+  --color-link-border-subtle: rgba(95, 168, 255, 0.28);
+  --color-row-highlight: rgba(255, 255, 255, 0.04);
+  --color-row-hover-subtle: rgba(255, 255, 255, 0.05);
+  --color-warning-row-bg: rgba(246, 176, 74, 0.18);
+  --color-danger-row-bg: rgba(240, 100, 100, 0.18);
+  --color-danger-row-bg-subtle: rgba(240, 100, 100, 0.06);
+  --color-danger-row-bg-muted: rgba(240, 100, 100, 0.1);
+  --color-danger-border-subtle: rgba(240, 100, 100, 0.35);
+  --color-danger-bg-subtle: rgba(240, 100, 100, 0.12);
+  --color-success-row-bg: rgba(52, 211, 153, 0.14);
+  --color-warning-row-bg-muted: rgba(246, 176, 74, 0.14);
+  --color-danger-row-bg-muted-alt: rgba(240, 100, 100, 0.14);
+  --color-neutral-row-bg: rgba(141, 160, 179, 0.14);
+  --color-muted-row-bg: rgba(141, 160, 179, 0.1);
+  --color-orange-badge-bg: rgba(245, 158, 11, 0.14);
+  --color-orange-badge-border: rgba(245, 158, 11, 0.32);
+  --color-orange-badge-bg-hover: rgba(245, 158, 11, 0.22);
+  --color-orange-badge-border-hover: rgba(245, 158, 11, 0.48);
+  --color-orange-badge-bg-active: rgba(245, 158, 11, 0.28);
+  --color-success-bg-subtle: rgba(52, 211, 153, 0.14);
+  --color-spinner-track: rgba(95, 168, 255, 0.22);
+  --color-text-emphasis: var(--color-text-primary);
+  --color-text-body-muted: var(--color-text-secondary);
+  --color-text-paywall-title: var(--color-text-primary);
+  --color-text-paywall-body: var(--color-text-secondary);
+  --shadow-primary-sm: 0 2px 8px rgba(6, 14, 24, 0.45);
+  --shadow-primary-md: 0 4px 12px rgba(6, 14, 24, 0.55);
+  --shadow-brand-sm: 0 14px 36px rgba(6, 14, 24, 0.35);
+  --shadow-brand-md: 0 10px 24px rgba(6, 14, 24, 0.32);
+  --shadow-brand-lg: 0 12px 28px rgba(6, 14, 24, 0.45), 0 3px 8px rgba(0, 0, 0, 0.35);
+  --shadow-brand-lg-hover: 0 16px 32px rgba(6, 14, 24, 0.52), 0 4px 10px rgba(0, 0, 0, 0.38);
+  --shadow-brand-panel: 0 8px 32px rgba(6, 14, 24, 0.55), 0 2px 8px var(--color-border-default);
+  --shadow-brand-drop: 0 14px 18px rgba(6, 14, 24, 0.42);
+  --shadow-brand-card: 0 6px 18px rgba(6, 14, 24, 0.4);
+  --shadow-brand-panel-lg: 0 8px 24px rgba(6, 14, 24, 0.48);
+  --shadow-subtle-xs: 0 1px 2px rgba(6, 14, 24, 0.35);
+  --shadow-subtle-sm: 0 1px 3px rgba(6, 14, 24, 0.35);
+  --shadow-subtle-md: 0 1px 3px rgba(6, 14, 24, 0.45);
+  --shadow-paywall: 0 20px 50px rgba(6, 14, 24, 0.55);
+  --shadow-finance-card: 0 4px 6px -1px rgba(6, 14, 24, 0.45), 0 2px 4px -1px rgba(6, 14, 24, 0.35);
+  --shadow-pagination-active: 0 2px 8px rgba(95, 168, 255, 0.35);
+  --shadow-focus-error: 0 0 0 2px rgba(240, 100, 100, 0.28);
+  --shadow-focus-warning: 0 0 0 2px rgba(246, 176, 74, 0.28);
+  --shadow-focus-error-lg: 0 0 0 3px rgba(240, 100, 100, 0.16);
+  --shadow-focus-success: 0 0 0 2px rgba(52, 211, 153, 0.28);
+  --shadow-heatmap-today: inset 0 0 0 1px color-mix(in srgb, var(--color-info) 40%, transparent);
+  --shadow-heatmap-selected: inset 0 0 6px color-mix(in srgb, var(--color-info) 25%, transparent), inset 0 0 0 1px color-mix(in srgb, var(--color-info) 50%, transparent);
+
+  /* Chart & Skeleton */
+  --color-chart-axis: #8ea2b6;
+  --color-chart-grid: rgba(200, 218, 236, 0.12);
+  --color-chart-cursor: rgba(123, 176, 255, 0.08);
+  --color-skeleton-from: #223041;
+  --color-skeleton-to: #2a3949;
+
+  --card-padding-light: 20px;
+
+  /* Keep aliases theme-aware in dark mode */
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --text-tertiary: var(--color-text-tertiary);
+  --border-color: var(--color-border-default);
+  --error-color: var(--color-danger);
+  --primary-color: var(--color-primary);
+  --disabled-bg: var(--color-disabled-bg);
+  --color-bg-disabled: var(--color-disabled-bg);
+  --color-background-secondary: var(--color-bg-secondary);
+}
+

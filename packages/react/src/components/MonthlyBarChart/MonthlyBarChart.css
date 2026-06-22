@@ -1,0 +1,59 @@
+.monthly-bar-chart {
+  width: 100%;
+  min-width: 0;
+}
+
+.monthly-bar-chart-skeleton {
+  width: 100%;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    90deg,
+    var(--color-skeleton-from) 25%,
+    var(--color-skeleton-to) 50%,
+    var(--color-skeleton-from) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+}
+
+.monthly-bar-chart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.monthly-bar-chart-tooltip {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: var(--shadow-md);
+  font-size: 13px;
+  min-width: 160px;
+}
+
+.monthly-bar-chart-tooltip-label {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 6px;
+}
+
+.monthly-bar-chart-tooltip-row {
+  margin: 2px 0;
+}
+
+.monthly-bar-chart-tooltip-explanation {
+  margin: 8px 0 0;
+  padding-top: 6px;
+  border-top: 1px solid var(--color-border);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

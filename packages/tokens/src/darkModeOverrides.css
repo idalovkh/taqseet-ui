@@ -1,0 +1,433 @@
+/**
+ * Dark Mode Overrides
+ * 
+ * ВАЖНО: Этот файл содержит ТОЛЬКО переопределения для тёмной темы.
+ * Светлая тема остаётся нетронутой.
+ * Все селекторы имеют префикс [data-theme='dark']
+ */
+
+/* ===== PERSON CREATE MODAL - Role Section ===== */
+
+/* Radio cards (Клиент / Поручитель) - hover state */
+[data-theme='dark'] .person-create-radio-card:hover {
+  background: var(--color-bg-button-secondary-hover);
+  border-color: var(--color-primary);
+}
+
+[data-theme='dark'] .person-create-radio-card-label {
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .person-create-radio-card:hover .person-create-radio-card-label {
+  color: var(--color-primary);
+}
+
+[data-theme='dark'] .person-create-radio-card--active {
+  background: var(--color-primary-bg);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-bg);
+}
+
+[data-theme='dark'] .person-create-radio-card--active .person-create-radio-card-label {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Actions divider */
+[data-theme='dark'] .person-create-actions {
+  border-top-color: var(--color-border-divider);
+}
+
+/* Regular radio buttons */
+[data-theme='dark'] .person-create-radio {
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .person-create-radio--compact {
+  color: var(--color-text-secondary);
+}
+
+[data-theme='dark'] .person-create-radio:hover {
+  color: var(--color-primary);
+}
+
+/* ===== SEARCH INPUT ===== */
+
+/* Усиление контраста поиска в header */
+[data-theme='dark'] .search-input-wrapper {
+  background: var(--color-bg-input);
+  border-color: var(--color-border-input);
+}
+
+[data-theme='dark'] .search-input-wrapper:focus-within {
+  border-color: var(--color-primary);
+  background: var(--color-bg-surface-elevated);
+}
+
+[data-theme='dark'] .search-input {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .search-input:focus {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+[data-theme='dark'] .search-input::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+/* ===== MODALS ===== */
+
+/* Modal overlay - чуть темнее для лучшего выделения */
+[data-theme='dark'] .modal-overlay {
+  background: var(--color-overlay-backdrop);
+}
+
+/* ===== CARDS & INFO BLOCKS ===== */
+
+/* Усиление контраста заголовков секций */
+[data-theme='dark'] .person-create-section-title,
+[data-theme='dark'] .info-card-title,
+[data-theme='dark'] h3 {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Labels должны быть читаемыми */
+[data-theme='dark'] .person-create-label,
+[data-theme='dark'] .info-label {
+  color: var(--color-text-secondary);
+}
+
+/* ===== FORMS ===== */
+
+/* Inputs, Textarea, Select - единообразие */
+[data-theme='dark'] input:not([type="radio"]):not([type="checkbox"]):not(.search-input),
+[data-theme='dark'] textarea,
+[data-theme='dark'] select {
+  background: var(--color-bg-input);
+  border-color: var(--color-border-input);
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] input::placeholder,
+[data-theme='dark'] textarea::placeholder,
+[data-theme='dark'] select::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+[data-theme='dark'] input:focus:not([type="radio"]):not([type="checkbox"]):not(.search-input),
+[data-theme='dark'] textarea:focus,
+[data-theme='dark'] select:focus {
+  border-color: var(--color-text-link);
+  background: var(--color-bg-input);
+  box-shadow: 0 0 0 2px var(--color-focus-ring);
+}
+
+[data-theme='dark'] input:disabled,
+[data-theme='dark'] textarea:disabled,
+[data-theme='dark'] select:disabled {
+  background: var(--color-disabled-bg);
+  color: var(--color-disabled-text);
+  border-color: var(--color-disabled-border);
+}
+
+/* ===== PAGE TITLES ===== */
+
+[data-theme='dark'] .page-title,
+[data-theme='dark'] h1 {
+  color: var(--color-text-primary);
+}
+
+/* ===== TABLES ===== */
+
+/* Table headers - усилить контраст */
+[data-theme='dark'] .table-header,
+[data-theme='dark'] thead th {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Table hover - заметнее */
+[data-theme='dark'] .table-row:hover,
+[data-theme='dark'] tbody tr:hover {
+  background: var(--color-bg-table-row-hover);
+}
+
+/* ===== PAGINATION ===== */
+
+/* Active page - усилить */
+[data-theme='dark'] .pagination-current {
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  box-shadow: var(--shadow-pagination-active);
+}
+
+[data-theme='dark'] .pagination-button:hover:not(:disabled) {
+  background: var(--color-hover-bg);
+  border-color: var(--color-primary);
+}
+
+/* ===== EMPTY STATES ===== */
+
+[data-theme='dark'] .person-create-radio-group--empty,
+[data-theme='dark'] .info-empty {
+  background: var(--color-bg-table-row-zebra);
+  border-color: var(--color-border-divider);
+  color: var(--color-text-tertiary);
+}
+
+/* ===== DIVIDERS ===== */
+
+[data-theme='dark'] hr,
+[data-theme='dark'] [class*="divider"] {
+  border-color: var(--color-border-divider);
+}
+
+/* ===== SPECIFIC COMPONENT FIXES ===== */
+
+/* Person create form sections */
+[data-theme='dark'] .person-create-section {
+  background: transparent;
+}
+
+[data-theme='dark'] .person-create-field-description,
+[data-theme='dark'] .person-create-helper-text {
+  color: var(--color-text-tertiary);
+}
+
+/* Contact items */
+[data-theme='dark'] .counterparty-details-document-item,
+[data-theme='dark'] .document-item {
+  background: var(--color-bg-table-row-zebra);
+  border-color: var(--color-border-default);
+}
+
+[data-theme='dark'] .counterparty-details-document-item:hover,
+[data-theme='dark'] .document-item:hover {
+  background: var(--color-bg-table-row-hover);
+  border-color: var(--color-border-input);
+}
+
+/* ===== AGREEMENT CREATE MODAL ===== */
+
+/* Финансовая секция - убрать светлый фон */
+[data-theme='dark'] .agreement-create-section--financial {
+  background-color: var(--color-bg-container);
+  border-color: var(--color-border-default);
+  box-shadow: none;
+}
+
+/* Заголовки секций - усилить */
+[data-theme='dark'] .agreement-create-section-title {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-border-divider);
+  font-weight: 600;
+}
+
+/* Бейджи в заголовках */
+[data-theme='dark'] .agreement-create-badge {
+  background-color: var(--color-bg-badge-default);
+  color: var(--color-text-secondary);
+}
+
+/* Helper text - читаемый */
+[data-theme='dark'] .agreement-create-helper {
+  color: var(--color-text-tertiary);
+  opacity: 1;
+}
+
+[data-theme='dark'] .agreement-create-helper-text {
+  color: var(--color-text-secondary);
+}
+
+[data-theme='dark'] .agreement-create-helper-text--small {
+  color: var(--color-text-tertiary);
+}
+
+/* Calculated values (аналитика) - тёмный фон */
+[data-theme='dark'] .agreement-create-calculated {
+  background-color: var(--color-bg-table-row-zebra);
+  border-color: var(--color-border-default);
+  box-shadow: none;
+}
+
+/* Calc labels */
+[data-theme='dark'] .agreement-create-analytics-label,
+[data-theme='dark'] .agreement-create-calc-label {
+  color: var(--color-text-secondary);
+}
+
+/* Calc values */
+[data-theme='dark'] .agreement-create-analytics-value,
+[data-theme='dark'] .agreement-create-calc-value {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Guarantor chips/items */
+[data-theme='dark'] .agreement-create-guarantor-chip,
+[data-theme='dark'] .agreement-create-guarantor-item {
+  background-color: var(--color-bg-button-secondary);
+  border-color: var(--color-border-default);
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .agreement-create-guarantor-chip:hover,
+[data-theme='dark'] .agreement-create-guarantor-item:hover {
+  background-color: var(--color-bg-button-secondary-hover);
+}
+
+[data-theme='dark'] .agreement-create-guarantor-chip button,
+[data-theme='dark'] .agreement-create-guarantor-item button,
+[data-theme='dark'] .agreement-create-guarantor-remove {
+  color: var(--color-text-tertiary);
+}
+
+[data-theme='dark'] .agreement-create-guarantor-chip button:hover,
+[data-theme='dark'] .agreement-create-guarantor-item button:hover,
+[data-theme='dark'] .agreement-create-guarantor-remove:hover {
+  color: var(--color-danger);
+}
+
+/* Error messages */
+[data-theme='dark'] .agreement-create-error {
+  background-color: var(--color-bg-badge-red);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+/* Inputs внутри финансовой секции - единообразие */
+[data-theme='dark'] .agreement-create-section--financial input,
+[data-theme='dark'] .agreement-create-section--financial textarea,
+[data-theme='dark'] .agreement-create-section--financial select {
+  background: var(--color-bg-input);
+  border-color: var(--color-border-input);
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .agreement-create-section--financial input::placeholder,
+[data-theme='dark'] .agreement-create-section--financial textarea::placeholder,
+[data-theme='dark'] .agreement-create-section--financial select::placeholder {
+  color: var(--color-text-placeholder);
+  opacity: 1;
+}
+
+[data-theme='dark'] .agreement-create-section--financial input:focus,
+[data-theme='dark'] .agreement-create-section--financial textarea:focus,
+[data-theme='dark'] .agreement-create-section--financial select:focus {
+  border-color: var(--color-primary);
+  background: var(--color-bg-input);
+}
+
+/* ===== PARTNER CONTACTS SECTION ===== */
+
+/* Контейнер контактов - убрать табличный вид */
+[data-theme='dark'] .partner-details-contacts {
+  background: transparent;
+}
+
+/* Contact item - убрать серые полосы */
+[data-theme='dark'] .contact-item {
+  border-bottom-color: var(--color-border-divider);
+  background: transparent;
+}
+
+[data-theme='dark'] .contact-item:last-child {
+  border-bottom: none;
+}
+
+/* Icon */
+[data-theme='dark'] .contact-item-icon-wrapper {
+  color: var(--color-text-secondary);
+}
+
+/* Type/Label */
+[data-theme='dark'] .contact-item-type,
+[data-theme='dark'] .contact-item-label {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* Primary badge */
+[data-theme='dark'] .contact-item-primary-badge {
+  background: var(--color-bg-badge-green);
+  color: var(--color-green);
+}
+
+/* Value */
+[data-theme='dark'] .contact-item-value {
+  color: var(--color-text-primary);
+}
+
+/* Убрать странные selection/active эффекты на заголовке секции */
+[data-theme='dark'] .partner-details-section-title {
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+[data-theme='dark'] .partner-details-section-title::selection {
+  background: color-mix(in srgb, var(--color-info) 30%, transparent);
+  color: var(--color-text-primary);
+}
+
+/* Убрать синий прямоугольник если это от active/focus */
+[data-theme='dark'] .partner-details-section-header {
+  background: transparent;
+}
+
+[data-theme='dark'] .partner-details-section-header::before,
+[data-theme='dark'] .partner-details-section-header::after {
+  display: none;
+}
+
+/* ===== NEUTRAL ACTION BUTTON TEXT ===== */
+[data-theme='dark'] .mobile-nav-row--primary .mobile-nav-row__label,
+[data-theme='dark'] .mobile-nav-row--primary:hover .mobile-nav-row__label,
+[data-theme='dark'] .mobile-nav-row--primary:active:not(:disabled) .mobile-nav-row__label,
+[data-theme='dark'] .btn-secondary,
+[data-theme='dark'] .btn-secondary:hover:not(:disabled),
+[data-theme='dark'] .btn-secondary:active:not(:disabled),
+[data-theme='dark'] .template-editor__var-chip:hover:not(:disabled),
+[data-theme='dark'] .template-editor__var-chip:focus-visible:not(:disabled) {
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .my-profile-card__edit,
+[data-theme='dark'] .fullscreen-modal-header__close-action {
+  color: var(--color-text-secondary);
+}
+
+[data-theme='dark'] .my-profile-card__edit:hover,
+[data-theme='dark'] .fullscreen-modal-header__close-action:hover {
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .template-editor__var-chip:hover:not(:disabled),
+[data-theme='dark'] .template-editor__var-chip:focus-visible:not(:disabled) {
+  border-color: var(--color-border-input-hover);
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 768px) {
+  [data-theme='dark'] .person-create-radio-group--cards {
+    gap: 0.5rem;
+  }
+  
+  [data-theme='dark'] .person-create-radio-card {
+    padding: 0.875rem;
+  }
+  
+  [data-theme='dark'] .agreement-create-calculated {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+

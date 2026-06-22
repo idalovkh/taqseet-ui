@@ -1,0 +1,70 @@
+{
+  "name": "@taqseet-ui/react",
+  "version": "0.1.0",
+  "private": true,
+  "description": "React UI components for Taqseet design system",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./components/*": "./src/components/*",
+    "./hooks/*": "./src/hooks/*",
+    "./contexts/*": "./src/contexts/*",
+    "./providers/*": "./src/providers/*",
+    "./config/*": "./src/config/*",
+    "./utils/*": "./src/utils/*",
+    "./vite": "./vite.shared.js"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test:visual": "playwright test"
+  },
+  "peerDependencies": {
+    "@floating-ui/react-dom": "^2.1.7",
+    "lucide-react": ">=0.500.0",
+    "react": "^18.2.0",
+    "react-day-picker": "^9.0.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": ">=6.0.0",
+    "react-select": "^5.0.0",
+    "react-virtuoso": "^4.0.0",
+    "recharts": "^3.0.0"
+  },
+  "devDependencies": {
+    "@floating-ui/react-dom": "^2.1.7",
+    "@playwright/test": "^1.49.0",
+    "@storybook/addon-essentials": "^8.6.0",
+    "@storybook/addon-themes": "^8.6.0",
+    "@storybook/react": "^8.6.0",
+    "@storybook/react-vite": "^8.6.0",
+    "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.18",
+    "lucide-react": "^0.559.0",
+    "react": "^18.2.0",
+    "react-day-picker": "^9.14.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.10.1",
+    "react-select": "^5.10.2",
+    "react-virtuoso": "^4.18.1",
+    "recharts": "^3.7.0",
+    "storybook": "^8.6.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.3.3",
+    "vite": "^6.0.0"
+  }
+}

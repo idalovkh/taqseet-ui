@@ -1,0 +1,71 @@
+.list-page-desktop-toolbar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.list-page-desktop-toolbar__spacer {
+  flex: 1;
+  min-width: 0;
+}
+
+.list-page-desktop-toolbar__center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  max-width: none;
+}
+
+.list-page-desktop-toolbar__center .calendar-navigation {
+  width: auto;
+  max-width: 100%;
+  margin-inline: 0;
+}
+
+.list-page-desktop-toolbar__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.list-page-desktop-toolbar__controls .export-button {
+  flex-shrink: 0;
+}
+
+.list-page-desktop-toolbar .list-page-search {
+  width: 300px;
+  min-width: 200px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.list-page-desktop-toolbar .counterparties-toolbar-leading {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.list-page-desktop-toolbar .list-filter-dropdown--compact .list-filter-dropdown-trigger {
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
+  justify-content: center;
+}
+
+.list-page-desktop-toolbar--legacy {
+  flex-wrap: wrap;
+}
+
+.list-page-desktop-toolbar--legacy .list-page-desktop-toolbar__controls {
+  flex-wrap: wrap;
+}

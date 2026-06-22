@@ -1,0 +1,23 @@
+{
+  "name": "@taqseet-ui/styles",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Global and layout styles for Taqseet UI",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.css",
+    "./globals.css": "./src/globals.css",
+    "./pageLayout.css": "./src/pageLayout.css",
+    "./listPageMobileToolbar.css": "./src/listPageMobileToolbar.css",
+    "./infoCard.css": "./src/infoCard.css",
+    "./responsive-utilities.css": "./src/responsive-utilities.css",
+    "./sectionHub.css": "./src/sectionHub.css",
+    "./settings.css": "./src/settings.css"
+  },
+  "files": [
+    "src"
+  ],
+  "peerDependencies": {
+    "@taqseet-ui/tokens": "0.1.0"
+  }
+}

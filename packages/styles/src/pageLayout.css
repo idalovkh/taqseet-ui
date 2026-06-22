@@ -1,0 +1,192 @@
+/**
+ * Page Layout Styles
+ * Единые стили для контентных страниц приложения
+ */
+
+/* ===== PAGE CONTAINER ===== */
+.page-container {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.page-container-with-surface {
+  width: 100%;
+  box-sizing: border-box;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 0;
+}
+
+/* Внутренний контейнер с ограничением ширины */
+.page-container > *:not(.page-full-width),
+.page-container-with-surface > *:not(.page-full-width) {
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.page-title {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.page-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ===== PAGE META TEXT ===== */
+/* Текст типа "Всего: 3" */
+.page-meta-text {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.page-meta-text strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* ===== BACK NAVIGATION ===== */
+/* Нейтральный текст вместо accent — особенно в тёмной теме */
+.list-page-back,
+.settings-page-frame__back,
+.org-settings-shell__hub-back,
+.finance-page__back,
+.report-detail-page__back {
+  color: var(--color-text-secondary);
+  transition: color 0.15s ease;
+}
+
+.list-page-back:hover,
+.settings-page-frame__back:hover,
+.org-settings-shell__hub-back:hover,
+.finance-page__back:hover,
+.report-detail-page__back:hover {
+  color: var(--color-text-primary);
+  opacity: 1;
+}
+
+.list-page-back:focus-visible,
+.settings-page-frame__back:focus-visible,
+.org-settings-shell__hub-back:focus-visible,
+.finance-page__back:focus-visible,
+.report-detail-page__back:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.org-settings-shell__hub-back:focus-visible {
+  border-radius: 6px;
+}
+
+/* Text / iOS action buttons — neutral text, not accent */
+.my-profile-card__edit,
+.fullscreen-modal-header__close-action {
+  color: var(--color-text-secondary);
+  transition: color 0.15s ease;
+}
+
+.my-profile-card__edit:hover,
+.fullscreen-modal-header__close-action:hover {
+  color: var(--color-text-primary);
+}
+
+.btn-secondary,
+.btn-secondary:hover:not(:disabled),
+.btn-secondary:active:not(:disabled) {
+  color: var(--color-text-primary);
+}
+
+/* ===== TABLE IMPROVEMENTS ===== */
+/* Усиление контраста заголовков таблиц */
+.table-header-text {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* ===== PAGINATION IMPROVEMENTS ===== */
+.pagination-enhanced .pagination-page-select {
+  border-color: var(--color-border-default);
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Desktop: >= 1280px */
+@media (min-width: 1280px) {
+  .page-header {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* Tablet: 768px - 1279px */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .page-header {
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .page-title {
+    font-size: var(--font-size-h1-mobile);
+  }
+  
+  .page-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .page-actions .btn,
+  .page-actions button:not(.search-input-clear) {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .page-actions .search-input-wrapper,
+  .page-actions [class*='-page-search'],
+  .page-actions [class*='-list-search'] {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  
+  .page-meta-text {
+    font-size: 13px;
+  }
+}
+

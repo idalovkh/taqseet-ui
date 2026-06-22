@@ -1,0 +1,208 @@
+@import '@taqseet-ui/tokens';
+@import '../../react/src/components/Tooltip/Tooltip.css';
+@import './pageLayout.css';
+@import './listPageMobileToolbar.css';
+@import './infoCard.css';
+@import './responsive-utilities.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  min-height: -webkit-fill-available;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Предотвращает zoom при фокусе на input на iOS */
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--color-bg-layout);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-height: -webkit-fill-available;
+  overflow: hidden; /* ← КРИТИЧНО: body НЕ скроллится */
+  font-family: var(--font-family-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-layout);
+  line-height: 1.5;
+  /* Улучшает рендеринг на мобильных */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-theme), color var(--transition-theme);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: -webkit-fill-available;
+  overflow: hidden;
+  background-color: var(--color-bg-layout);
+}
+
+@media (display-mode: standalone) {
+  html,
+  body,
+  #root {
+    min-height: -webkit-fill-available;
+  }
+
+  body {
+    box-sizing: border-box;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-layout);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-default);
+  border-radius: 4px;
+  transition: background var(--transition-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* Focus styles — exclude form controls; Input/Textarea/DatePicker set their own ring */
+*:focus-visible:not(input):not(textarea):not(select) {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+/* Prevent horizontal scroll on all devices */
+/* Removed - now body has overflow: hidden */
+
+/* Touch device optimizations - ensure minimum 44px touch targets */
+@media (hover: none) and (pointer: coarse) {
+  button:not(.theme-toggle-switch--row):not(.assistant-fab):not(.date-period-filter-btn):not(.segmented-control__option):not(.gender-select__option):not(.list-filter-dropdown-trigger--compact),
+  a[role="button"],
+  a.btn,
+  input[type="button"],
+  input[type="submit"],
+  .clickable {
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+  }
+}
+
+/* Desktop: >= 1280px */
+@media (min-width: 1280px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Tablet: 768px - 1279px */
+@media (min-width: 768px) and (max-width: 1279px) {
+  html {
+    font-size: 16px;
+  }
+  
+  body {
+    line-height: 1.5;
+  }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+  html {
+    font-size: 16px; /* Keep 16px to prevent iOS zoom */
+  }
+  
+  body {
+    line-height: 1.5;
+  }
+
+  /* Ensure touch targets on mobile */
+  button:not(.theme-toggle-switch--row):not(.assistant-fab):not(.date-period-filter-btn):not(.segmented-control__option):not(.gender-select__option):not(.list-filter-dropdown-trigger--compact):not(.ap-send-btn),
+  a[role="button"],
+  .clickable {
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button.assistant-fab {
+    display: none;
+  }
+
+  button.theme-toggle-switch--row {
+    display: block;
+    width: 40px;
+    height: 24px;
+    min-width: 40px;
+    min-height: 24px;
+    padding: 0;
+  }
+  
+  /* Better text rendering on mobile */
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Mobile: hide visual scrollbars, keep native scrolling */
+  *::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+}
+
+
+/* Dropdown menu: только безопасные дефолты, без !important — ширину задаёт компонент (width prop) */
+.dropdown-menu-item-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Unified radius for summary surfaces across pages */
+[class*='summary-bar'],
+[class*='summary-card'],
+.kpi-summary,
+.person-summary-card,
+.payment-schedule-summary,
+.payments-list-container,
+.portfolio-overview,
+.payments-widget,
+.investors-widget,
+.risks-widget,
+.recent-operations,
+.investors-stats-card,
+.dashboard-finance-chart-card {
+  border-radius: var(--summary-border-radius);
+}

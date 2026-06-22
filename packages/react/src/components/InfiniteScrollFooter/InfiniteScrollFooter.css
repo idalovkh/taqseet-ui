@@ -1,0 +1,20 @@
+.infinite-scroll-footer {
+  padding: 12px 0 8px;
+  text-align: center;
+}
+
+.infinite-scroll-footer__sentinel {
+  width: 100%;
+  height: 1px;
+  pointer-events: none;
+}
+
+.infinite-scroll-footer__status {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+}
+
+.infinite-scroll-footer__status--hint {
+  color: var(--color-text-placeholder);
+}

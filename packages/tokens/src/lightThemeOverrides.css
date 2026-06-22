@@ -1,0 +1,147 @@
+/**
+ * Light Theme Overrides - СТРОГИЙ БЕЛЫЙ ФОН
+ * 
+ * Все фоны в светлой теме должны быть белыми (#ffffff).
+ * Визуальное разделение только через бордеры, отступы и типографику.
+ * Никаких серых подложек, карточек, теней.
+ */
+
+/* ===== УБИРАЕМ СЕРЫЕ ФОНЫ ИЗ КОМПОНЕНТОВ ===== */
+
+/* Person Create Modal */
+:root[data-theme='light'] .person-create-section--role,
+:root[data-theme='light'] .person-create-radio-card:hover {
+  background: transparent !important;
+}
+
+/* Upload Document Modal */
+:root[data-theme='light'] .upload-scenario-option {
+  background-color: transparent !important;
+}
+
+:root[data-theme='light'] .upload-scenario-option.active {
+  background-color: var(--color-bg-container) !important;
+}
+
+:root[data-theme='light'] .upload-zone {
+  background-color: var(--color-bg-container) !important;
+}
+
+:root[data-theme='light'] .upload-zone:hover {
+  background-color: var(--color-bg-container) !important;
+}
+
+:root[data-theme='light'] .upload-zone.has-file,
+:root[data-theme='light'] .upload-zone.has-file:hover {
+  background-color: var(--color-bg-container) !important;
+}
+
+:root[data-theme='light'] .upload-photo-card {
+  background-color: var(--color-bg-container) !important;
+}
+
+:root[data-theme='light'] .upload-photo-card:hover,
+:root[data-theme='light'] .upload-photo-card.disabled:hover {
+  background-color: var(--color-bg-container) !important;
+}
+
+:root[data-theme='light'] .upload-photo-card.has-file,
+:root[data-theme='light'] .upload-photo-card.has-file:hover {
+  background-color: var(--color-bg-container) !important;
+}
+
+:root[data-theme='light'] .upload-photo-preview-info {
+  background-color: var(--color-bg-container) !important;
+}
+
+/* Agreement Create Modal */
+:root[data-theme='light'] .agreement-create-section--financial {
+  background-color: transparent !important;
+}
+
+:root[data-theme='light'] .agreement-create-calculated {
+  background-color: transparent !important;
+}
+
+:root[data-theme='light'] .agreement-create-radio-label:hover:not(:has(input:disabled)) {
+  background-color: transparent !important;
+}
+
+/* Finance Page */
+:root[data-theme='light'] .finance-page-dropdown-item:hover {
+  background: var(--color-hover-row) !important;
+}
+
+:root[data-theme='light'] .finance-page-dropdown-item:active {
+  background: var(--color-hover-bg) !important;
+}
+
+:root[data-theme='light'] .finance-table thead {
+  background: transparent !important;
+}
+
+:root[data-theme='light'] .finance-table tbody tr:hover {
+  background: var(--color-hover-row) !important;
+}
+
+:root[data-theme='light'] .finance-pagination {
+  background: transparent !important;
+}
+
+:root[data-theme='light'] .pagination-button:hover:not(:disabled) {
+  background: var(--color-hover-row) !important;
+}
+
+/* Partners Section - только бордеры для статусов */
+:root[data-theme='light'] .partners-section-status-inactive {
+  background: transparent !important;
+  border: 1px solid var(--color-danger) !important;
+}
+
+:root[data-theme='light'] .partners-section-status-archived {
+  background: transparent !important;
+  border: 1px solid var(--color-text-secondary) !important;
+}
+
+/* Employees Page - только бордеры для бейджей */
+:root[data-theme='light'] .employees-role-администратор {
+  background: transparent !important;
+  border: 1px solid var(--color-warning-text) !important;
+}
+
+:root[data-theme='light'] .employees-status-inactive {
+  background: transparent !important;
+  border: 1px solid var(--color-danger) !important;
+}
+
+/* Status badges - только бордеры */
+:root[data-theme='light'] .status-pending {
+  background: transparent !important;
+  border: 1px solid var(--color-warning-text) !important;
+}
+
+/* ===== УБИРАЕМ ВСЕ BORDER-RADIUS ===== */
+
+:root[data-theme='light'] .info-card,
+:root[data-theme='light'] .modal-content,
+:root[data-theme='light'] .page-container-with-surface {
+  border-radius: 0 !important;
+}
+
+/* ===== УБИРАЕМ ВСЕ ТЕНИ ===== */
+
+:root[data-theme='light'] .info-card,
+:root[data-theme='light'] .login-card,
+:root[data-theme='light'] .page-container-with-surface,
+:root[data-theme='light'] .login-logo {
+  box-shadow: none !important;
+}
+
+/* ===== УСИЛИВАЕМ БОРДЕРЫ ДЛЯ КОМПЕНСАЦИИ ===== */
+
+:root[data-theme='light'] .info-card,
+:root[data-theme='light'] .login-card,
+:root[data-theme='light'] .modal-content {
+  border: 1px solid var(--color-border-default) !important;
+}
+

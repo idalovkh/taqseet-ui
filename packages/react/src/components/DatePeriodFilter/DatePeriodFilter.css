@@ -1,0 +1,303 @@
+.date-period-filter {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.date-period-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  box-sizing: border-box;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-container);
+  color: var(--color-text-secondary);
+  border-radius: 8px;
+  padding: 0 14px;
+  min-height: 36px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.date-period-filter-btn:focus {
+  outline: none;
+}
+
+.date-period-filter-btn:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.date-period-filter-btn:active {
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+.date-period-filter-btn:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.date-period-filter-btn--active {
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+.date-period-filter-btn--trigger {
+  min-width: 220px;
+}
+
+.date-period-filter-btn-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.date-period-filter-btn-chevron {
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+  transition: transform 0.15s ease;
+}
+
+.date-period-filter-btn--active .date-period-filter-btn-chevron {
+  transform: rotate(180deg);
+}
+
+.date-period-filter-panel,
+.date-period-filter-sheet {
+  box-sizing: border-box;
+}
+
+.date-period-filter-panel {
+  width: min(336px, calc(100vw - 16px));
+  max-width: calc(100vw - 16px);
+  padding: 10px;
+  background: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: 12px;
+  box-shadow: var(--shadow-dropdown);
+  animation: date-period-filter-panel-fade 0.15s ease;
+}
+
+.date-period-filter-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@media (min-width: 1280px) {
+  .date-period-filter-panel {
+    width: 420px;
+    max-width: min(420px, calc(100vw - 16px));
+  }
+
+  .date-period-filter-panel-fields .input-wrapper {
+    min-width: 160px;
+  }
+}
+
+.date-period-filter-panel-head {
+  margin-bottom: 8px;
+}
+
+.date-period-filter-panel-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.date-period-filter-panel-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.date-period-filter-panel-chip {
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-container);
+  color: var(--color-text-secondary);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  line-height: 1.15;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.date-period-filter-panel-chip:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.date-period-filter-panel-chip--active {
+  background: var(--color-primary-bg-muted, var(--color-primary-bg));
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+@keyframes date-period-filter-panel-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.date-period-filter-panel-fields {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.date-period-filter-panel-fields .input-wrapper {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.date-period-filter-panel-fields .input-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.date-period-filter-panel-fields .date-picker-trigger {
+  width: 100%;
+}
+
+.date-period-filter-panel-fields .date-picker-trigger__button {
+  border-radius: 8px;
+}
+
+.date-period-filter-panel-fields .date-picker-trigger .input,
+.date-period-filter-panel-fields .date-period-filter-panel-datepicker {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  min-height: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 12px;
+  font-size: 14px;
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.date-period-filter-panel-fields .date-picker-trigger .input:focus,
+.date-period-filter-panel-fields .date-period-filter-panel-datepicker:focus {
+  border-radius: 10px;
+  outline: none;
+}
+
+.date-period-filter-panel-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 12px;
+}
+
+[data-theme='dark'] .date-period-filter-btn:hover,
+[data-theme='dark'] .date-period-filter-btn--active {
+  background: var(--color-bg-button-secondary-hover);
+  border-color: var(--color-border-input-hover);
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .date-period-filter-panel-chip:hover {
+  border-color: var(--color-border-input-hover);
+  background: var(--color-bg-button-secondary-hover);
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .date-period-filter-panel-chip--active {
+  background: var(--color-bg-button-secondary);
+  border-color: var(--color-border-input-hover);
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 1279px) {
+  .date-period-filter {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    box-sizing: border-box;
+  }
+
+  .date-period-filter-btn--trigger {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 36px;
+    padding-inline: 14px;
+    border-radius: 8px;
+    justify-content: space-between;
+    gap: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .date-period-filter-btn--trigger:focus-visible {
+    border-radius: 8px;
+  }
+
+  .date-period-filter-btn-label {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
+  .date-period-filter-btn--trigger {
+    min-height: 40px;
+  }
+
+  .date-period-filter-btn--trigger:active {
+    transform: scale(0.98);
+  }
+
+  .date-period-filter-panel-fields {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .date-period-filter-panel-actions {
+    margin-top: 16px;
+  }
+
+  .date-period-filter-panel-actions .btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .date-period-filter-sheet .date-period-filter-panel-presets {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .date-period-filter-sheet .date-period-filter-panel-chip {
+    flex: 1 1 calc(50% - 4px);
+    text-align: center;
+    min-height: 40px;
+  }
+}
