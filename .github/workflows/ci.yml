@@ -31,8 +31,10 @@ jobs:
       - name: Build library
         run: npm run build
 
-      - name: Install Playwright
-        run: npx playwright install chromium --with-deps
-
       - name: Visual regression
-        run: npm run test:visual
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}:/work" \
+            -w /work \
+            mcr.microsoft.com/playwright:v1.49.1-jammy \
+            bash -lc "npm ci --legacy-peer-deps && cd packages/react && npx playwright install chromium && npm run test:visual"

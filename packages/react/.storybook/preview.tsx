@@ -24,7 +24,11 @@ const preview: Preview = {
   decorators: [
     (Story, context) => {
       document.documentElement.setAttribute('data-theme', context.globals.theme)
-      return <Story />
+      return (
+        <div data-visual-frame style={{ width: 280, display: 'inline-block' }}>
+          <Story />
+        </div>
+      )
     },
   ],
 }

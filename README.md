@@ -54,10 +54,12 @@ CI runs on **Linux** (`ubuntu-latest`). Snapshots are stored per platform:
 - `*-chromium-linux.png` — used in GitHub Actions
 - `*-chromium-darwin.png` — used on macOS locally
 
-After changing UI, refresh Linux baselines (same environment as CI):
+After changing UI, refresh Linux baselines (same Docker image as CI):
 
 ```bash
 npm run test:visual:update:linux
 ```
+
+CI runs visual tests inside `mcr.microsoft.com/playwright:v1.49.1-jammy` so snapshots match the runner environment.
 
 Then commit updated files under `packages/react/tests/visual/components.spec.ts-snapshots/`.
