@@ -46,3 +46,18 @@ npm install
 npm run build
 npm run storybook -w @taqseet-ui/react
 ```
+
+## Visual regression (Playwright)
+
+CI runs on **Linux** (`ubuntu-latest`). Snapshots are stored per platform:
+
+- `*-chromium-linux.png` — used in GitHub Actions
+- `*-chromium-darwin.png` — used on macOS locally
+
+After changing UI, refresh Linux baselines (same environment as CI):
+
+```bash
+npm run test:visual:update:linux
+```
+
+Then commit updated files under `packages/react/tests/visual/components.spec.ts-snapshots/`.

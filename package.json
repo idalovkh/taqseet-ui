@@ -12,7 +12,8 @@
     "lint": "npm run lint --workspaces --if-present",
     "storybook": "npm run storybook -w @taqseet-ui/react",
     "build-storybook": "npm run build-storybook -w @taqseet-ui/react",
-    "test:visual": "npm run test:visual -w @taqseet-ui/react"
+    "test:visual": "npm run test:visual -w @taqseet-ui/react",
+    "test:visual:update:linux": "docker run --rm -v \"${PWD}:/work\" -w /work mcr.microsoft.com/playwright:v1.49.1-jammy bash -lc 'npm ci --legacy-peer-deps && cd packages/react && npx playwright install chromium && npm run test:visual -- --update-snapshots'"
   },
   "engines": {
     "node": ">=20"
