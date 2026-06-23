@@ -16,6 +16,43 @@ Shared design system for Taqseet applications.
 import '@taqseet-ui/styles/globals.css'
 ```
 
+## Install from GitHub Packages
+
+1. Create a GitHub Personal Access Token with `read:packages` (and `repo` if the package is private).
+2. In each consuming app, copy `.npmrc.example` to `.npmrc` and export the token:
+
+```bash
+export NODE_AUTH_TOKEN=ghp_...
+npm install
+```
+
+3. Dependencies in `package.json`:
+
+```json
+"@taqseet-ui/react": "^0.1.0",
+"@taqseet-ui/styles": "^0.1.0",
+"@taqseet-ui/tokens": "^0.1.0"
+```
+
+## Publish new versions
+
+Push a tag `v0.1.1` or run the **Publish** workflow manually in GitHub Actions.
+
+```bash
+git tag v0.1.1
+git push origin v0.1.1
+```
+
+Before the first install, run **Publish** once so packages exist in the registry.
+
+## Local development (without registry)
+
+Clone `taqseet-ui` next to the app and use file dependencies:
+
+```json
+"@taqseet-ui/react": "file:../taqseet-ui/packages/react"
+```
+
 ## App integration (Vite)
 
 ```ts

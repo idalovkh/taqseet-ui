@@ -1,8 +1,16 @@
 {
   "name": "@taqseet-ui/styles",
   "version": "0.1.0",
-  "private": true,
   "description": "Global and layout styles for Taqseet UI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idalovkh/taqseet-ui.git",
+    "directory": "packages/styles"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "type": "module",
   "exports": {
     ".": "./src/index.css",
@@ -18,6 +26,6 @@
     "src"
   ],
   "peerDependencies": {
-    "@taqseet-ui/tokens": "0.1.0"
+    "@taqseet-ui/tokens": "^0.1.0"
   }
 }

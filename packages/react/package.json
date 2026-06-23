@@ -1,8 +1,16 @@
 {
   "name": "@taqseet-ui/react",
   "version": "0.1.0",
-  "private": true,
   "description": "React UI components for Taqseet design system",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idalovkh/taqseet-ui.git",
+    "directory": "packages/react"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -22,7 +30,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "vite.shared.js"
   ],
   "scripts": {
     "build": "tsup",

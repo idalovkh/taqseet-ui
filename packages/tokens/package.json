@@ -1,8 +1,16 @@
 {
   "name": "@taqseet-ui/tokens",
   "version": "0.1.0",
-  "private": true,
   "description": "Design tokens and theme CSS for Taqseet UI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idalovkh/taqseet-ui.git",
+    "directory": "packages/tokens"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "type": "module",
   "exports": {
     ".": "./src/index.css",

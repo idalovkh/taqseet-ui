@@ -1,5 +1,5 @@
 @import '@taqseet-ui/tokens';
-@import '../../react/src/components/Tooltip/Tooltip.css';
+@import '@taqseet-ui/react/components/Tooltip/Tooltip.css';
 @import './pageLayout.css';
 @import './listPageMobileToolbar.css';
 @import './infoCard.css';
