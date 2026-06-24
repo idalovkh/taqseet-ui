@@ -12,8 +12,12 @@
     "access": "restricted"
   },
   "type": "module",
+  "types": "./src/index.d.ts",
   "exports": {
-    ".": "./src/index.css",
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.css"
+    },
     "./designTokens.css": "./src/designTokens.css",
     "./lightThemeOverrides.css": "./src/lightThemeOverrides.css",
     "./darkModeOverrides.css": "./src/darkModeOverrides.css",

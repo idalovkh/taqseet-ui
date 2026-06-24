@@ -56,6 +56,8 @@ const MOVED_HOOKS = [
   'useTheme',
 ]
 
+let hasWarnedHybridMode = false
+
 function exists(targetPath) {
   return fs.existsSync(targetPath)
 }
@@ -127,6 +129,12 @@ export function createTaqseetUiAliases(appRoot, options = {}) {
   }
 
   if (mode === 'hybrid') {
+    if (!hasWarnedHybridMode) {
+      hasWarnedHybridMode = true
+      console.warn(
+        '[taqseet-ui] createTaqseetUiAliases(mode=hybrid) is migration-only and should be phased out. Prefer mode=full for production parity.',
+      )
+    }
     applyHybridComponentAliases(aliases, localShared)
     applyLibrarySupportAliases(aliases)
     return aliases

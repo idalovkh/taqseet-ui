@@ -20,17 +20,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./components/*": "./src/components/*",
-    "./hooks/*": "./src/hooks/*",
-    "./contexts/*": "./src/contexts/*",
-    "./providers/*": "./src/providers/*",
-    "./config/*": "./src/config/*",
-    "./utils/*": "./src/utils/*",
     "./vite": "./vite.shared.js"
   },
   "files": [
     "dist",
-    "src",
     "vite.shared.js"
   ],
   "scripts": {

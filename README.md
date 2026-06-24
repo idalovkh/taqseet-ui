@@ -13,8 +13,17 @@ Shared design system for Taqseet applications.
 ## CSS import order
 
 ```ts
+import '@idalovkh/taqseet-ui-tokens'
 import '@idalovkh/taqseet-ui-styles/globals.css'
 ```
+
+Tokens must be loaded before globals so CSS variables are available when global styles evaluate.
+
+## Public API contract (`@idalovkh/taqseet-ui-react`)
+
+- Supported runtime entrypoint: `@idalovkh/taqseet-ui-react`
+- Supported tooling helper: `@idalovkh/taqseet-ui-react/vite`
+- Deep imports to internal source files are not part of the public API and may break without notice.
 
 ## Install from GitHub Packages
 
@@ -75,6 +84,16 @@ Set `VITE_UI_LIBRARY=false` to use local styles/components while migrating:
 ```ts
 const useLibrary = import.meta.env.VITE_UI_LIBRARY !== 'false'
 ```
+
+## Hybrid mode deprecation path
+
+`createTaqseetUiAliases(..., { mode: 'hybrid' })` is migration-only. Keep it temporary and move each app to `mode: 'full'`.
+
+Recommended rollout:
+
+1. Validate one app with `mode: 'full'` in staging.
+2. Keep `VITE_UI_LIBRARY=false` as emergency fallback during rollout.
+3. Remove `hybrid` from app `vite.config.ts` once parity is confirmed.
 
 ## Development
 
