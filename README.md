@@ -6,14 +6,14 @@ Shared design system for Taqseet applications.
 
 | Package | Description |
 |---------|-------------|
-| `@taqseet-ui/tokens` | Design tokens, theme overrides, breakpoints |
-| `@taqseet-ui/styles` | Global styles and layout utilities |
-| `@taqseet-ui/react` | React UI and layout components |
+| `@idalovkh/taqseet-ui-tokens` | Design tokens, theme overrides, breakpoints |
+| `@idalovkh/taqseet-ui-styles` | Global styles and layout utilities |
+| `@idalovkh/taqseet-ui-react` | React UI and layout components |
 
 ## CSS import order
 
 ```ts
-import '@taqseet-ui/styles/globals.css'
+import '@idalovkh/taqseet-ui-styles/globals.css'
 ```
 
 ## Install from GitHub Packages
@@ -29,9 +29,9 @@ npm install
 3. Dependencies in `package.json`:
 
 ```json
-"@taqseet-ui/react": "^0.1.0",
-"@taqseet-ui/styles": "^0.1.0",
-"@taqseet-ui/tokens": "^0.1.0"
+"@idalovkh/taqseet-ui-react": "^0.1.0",
+"@idalovkh/taqseet-ui-styles": "^0.1.0",
+"@idalovkh/taqseet-ui-tokens": "^0.1.0"
 ```
 
 ## Publish new versions
@@ -50,13 +50,13 @@ Before the first install, run **Publish** once so packages exist in the registry
 Clone `taqseet-ui` next to the app and use file dependencies:
 
 ```json
-"@taqseet-ui/react": "file:../taqseet-ui/packages/react"
+"@idalovkh/taqseet-ui-react": "file:../taqseet-ui/packages/react"
 ```
 
 ## App integration (Vite)
 
 ```ts
-import { createTaqseetUiAliases } from '@taqseet-ui/react/vite'
+import { createTaqseetUiAliases } from '@idalovkh/taqseet-ui-react/vite'
 
 export default defineConfig({
   resolve: {
@@ -81,7 +81,7 @@ const useLibrary = import.meta.env.VITE_UI_LIBRARY !== 'false'
 ```bash
 npm install
 npm run build
-npm run storybook -w @taqseet-ui/react
+npm run storybook -w @idalovkh/taqseet-ui-react
 ```
 
 ## Visual regression (Playwright)

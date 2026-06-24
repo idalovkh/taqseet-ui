@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com
-          scope: '@taqseet-ui'
+          scope: '@idalovkh'
           cache: npm
           cache-dependency-path: package-lock.json
 
@@ -31,8 +31,8 @@ jobs:
 
       - name: Publish packages
         run: |
-          npm publish -w @taqseet-ui/tokens --access restricted
-          npm publish -w @taqseet-ui/styles --access restricted
-          npm publish -w @taqseet-ui/react --access restricted
+          npm publish -w @idalovkh/taqseet-ui-tokens --access restricted
+          npm publish -w @idalovkh/taqseet-ui-styles --access restricted
+          npm publish -w @idalovkh/taqseet-ui-react --access restricted
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

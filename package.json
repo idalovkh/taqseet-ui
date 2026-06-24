@@ -10,9 +10,9 @@
     "build": "npm run build --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
-    "storybook": "npm run storybook -w @taqseet-ui/react",
-    "build-storybook": "npm run build-storybook -w @taqseet-ui/react",
-    "test:visual": "npm run test:visual -w @taqseet-ui/react",
+    "storybook": "npm run storybook -w @idalovkh/taqseet-ui-react",
+    "build-storybook": "npm run build-storybook -w @idalovkh/taqseet-ui-react",
+    "test:visual": "npm run test:visual -w @idalovkh/taqseet-ui-react",
     "test:visual:update:linux": "docker run --rm -v \"${PWD}:/work\" -w /work mcr.microsoft.com/playwright:v1.49.1-jammy bash -lc 'npm ci --legacy-peer-deps && cd packages/react && npx playwright install chromium && npm run test:visual -- --update-snapshots'"
   },
   "engines": {

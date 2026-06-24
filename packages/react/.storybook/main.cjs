@@ -12,8 +12,8 @@ module.exports = {
     config.resolve ??= {}
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@taqseet-ui/tokens': path.resolve(__dirname, '../../tokens/src/index.css'),
-      '@taqseet-ui/styles/globals.css': path.resolve(__dirname, '../../styles/src/globals.css'),
+      '@idalovkh/taqseet-ui-tokens': path.resolve(__dirname, '../../tokens/src/index.css'),
+      '@idalovkh/taqseet-ui-styles/globals.css': path.resolve(__dirname, '../../styles/src/globals.css'),
       '@/shared/components/ui': path.resolve(__dirname, '../src/components'),
       '@/shared/components/layout': path.resolve(__dirname, '../src/components/layout'),
       '@/shared/hooks': path.resolve(__dirname, '../src/hooks'),

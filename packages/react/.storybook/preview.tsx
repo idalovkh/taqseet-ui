@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react'
-import '@taqseet-ui/styles/globals.css'
+import '@idalovkh/taqseet-ui-styles/globals.css'
 
 const preview: Preview = {
   parameters: {

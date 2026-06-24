@@ -116,10 +116,10 @@ export function createTaqseetUiAliases(appRoot, options = {}) {
   const localShared = path.resolve(appRoot, 'src/shared')
 
   const aliases = {
-    '@taqseet-ui/tokens': path.resolve(tokensRoot, 'index.css'),
-    '@taqseet-ui/styles/globals.css': path.resolve(stylesRoot, 'globals.css'),
-    '@taqseet-ui/styles': stylesRoot,
-    '@taqseet-ui/react': path.resolve(__dirname, 'src/index.ts'),
+    '@idalovkh/taqseet-ui-tokens': path.resolve(tokensRoot, 'index.css'),
+    '@idalovkh/taqseet-ui-styles/globals.css': path.resolve(stylesRoot, 'globals.css'),
+    '@idalovkh/taqseet-ui-styles': stylesRoot,
+    '@idalovkh/taqseet-ui-react': path.resolve(__dirname, 'src/index.ts'),
   }
 
   if (mode === 'styles-only') {
