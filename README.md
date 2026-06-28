@@ -38,9 +38,9 @@ npm install
 3. Dependencies in `package.json`:
 
 ```json
-"@idalovkh/taqseet-ui-react": "^0.1.0",
-"@idalovkh/taqseet-ui-styles": "^0.1.0",
-"@idalovkh/taqseet-ui-tokens": "^0.1.0"
+"@idalovkh/taqseet-ui-react": "^0.1.3",
+"@idalovkh/taqseet-ui-styles": "^0.1.3",
+"@idalovkh/taqseet-ui-tokens": "^0.1.3",
 ```
 
 ## Publish new versions

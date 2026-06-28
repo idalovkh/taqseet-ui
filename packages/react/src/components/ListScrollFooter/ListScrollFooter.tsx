@@ -1,5 +1,5 @@
 import type { Ref } from 'react'
-import { InfiniteScrollFooter } from '@/shared/components/ui/InfiniteScrollFooter/InfiniteScrollFooter'
+import { InfiniteScrollFooter } from '../InfiniteScrollFooter'
 
 interface ListScrollFooterProps {
   total: number

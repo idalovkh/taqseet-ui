@@ -7,6 +7,8 @@ const stories = [
   { id: 'ui-input--dark', name: 'input-dark' },
   { id: 'ui-badge--success', name: 'badge-success' },
   { id: 'ui-badge--dark', name: 'badge-dark' },
+  { id: 'ui-alert--success', name: 'alert-success' },
+  { id: 'ui-alert--dark', name: 'alert-dark' },
 ]
 
 for (const story of stories) {
