@@ -26,10 +26,11 @@ function resolveStylesGlobalsCss() {
 
 const librarySrcRoot = path.resolve(__dirname, 'src')
 const hasLibrarySrc = exists(path.resolve(librarySrcRoot, 'index.ts'))
+const reactPackageRoot = __dirname
 const reactRoot = hasLibrarySrc ? librarySrcRoot : path.resolve(__dirname, 'dist')
 const reactEntry = hasLibrarySrc
   ? path.resolve(librarySrcRoot, 'index.ts')
-  : path.resolve(__dirname, 'dist/index.js')
+  : reactPackageRoot
 const tokensRoot = path.dirname(resolveTokensCss())
 const stylesRoot = path.dirname(resolveStylesGlobalsCss())
 
@@ -40,8 +41,8 @@ const MANAGER_LOCAL_OVERRIDES = [
 ]
 
 const LAYOUT_LOCAL_OVERRIDES = [
-  'SectionHubGrid',
-  'RouterErrorBoundary',
+  // Phase-4 assessment (2026-06): keep manager shell local (rail/bottom-nav/app-menu).
+  // Unify admin/invest AppShell first; manager stays variant=classic until Phase-4 epic.
   'AppLayout',
   'AppShell',
   'Sidebar',
@@ -64,6 +65,9 @@ const MOVED_LAYOUT = [
   'MenuBackLink',
   'ProfileIdentityCard',
   'ErrorBoundary',
+  'RouterErrorBoundary',
+  'SectionHubGrid',
+  'ListRouteFallback',
 ]
 
 const MOVED_HOOKS = [
@@ -117,6 +121,7 @@ function applyLibrarySupportAliases(aliases) {
   aliases['@/shared/contexts'] = path.resolve(reactRoot, 'contexts')
   aliases['@/shared/providers'] = path.resolve(reactRoot, 'providers')
   aliases['@/shared/config/support.config'] = path.resolve(reactRoot, 'config/support.config.ts')
+  aliases['@/shared/config/menuBackNavigation'] = path.resolve(reactRoot, 'config/menuBackNavigation.ts')
 
   for (const name of MOVED_HOOKS) {
     aliases[`@/shared/hooks/${name}`] = path.resolve(reactRoot, 'hooks', `${name}.ts`)
@@ -156,7 +161,13 @@ export function createTaqseetUiAliases(appRoot, options = {}) {
     return aliases
   }
 
-  if (!hasLibrarySrc) {
+  if (!hasLibrarySrc && mode === 'hybrid') {
+    if (!hasWarnedHybridMode) {
+      hasWarnedHybridMode = true
+      console.warn(
+        '[taqseet-ui] createTaqseetUiAliases(mode=hybrid) requires library source; only package entry aliases are applied.',
+      )
+    }
     return aliases
   }
 
@@ -196,12 +207,14 @@ export function createTaqseetUiAliases(appRoot, options = {}) {
     }
   }
 
-  for (const name of MOVED_LAYOUT) {
-    aliases[`@/shared/components/layout/${name}`] = path.resolve(reactRoot, 'components/layout', name)
-  }
+  applyHybridComponentAliases(aliases, localShared)
 
-  aliases['@/shared/components/ui'] = path.resolve(reactRoot, 'components')
-  applyLibrarySupportAliases(aliases)
+  if (hasLibrarySrc) {
+    for (const name of MOVED_LAYOUT) {
+      aliases[`@/shared/components/layout/${name}`] = path.resolve(reactRoot, 'components/layout', name)
+    }
+    applyLibrarySupportAliases(aliases)
+  }
 
   return aliases
 }

@@ -1,0 +1,115 @@
+.section-hub__empty {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.section-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.section-hub-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 140px;
+  padding: 20px 22px;
+  border: 1px solid var(--color-border-card);
+  border-radius: 12px;
+  background: var(--color-bg-container);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.section-hub-card:hover {
+  border-color: var(--color-border-input-hover);
+  background: var(--color-bg-surface-elevated);
+  box-shadow: var(--shadow-card);
+}
+
+.section-hub-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.section-hub-card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+
+.section-hub-card__icon {
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+  transition: color 0.15s ease;
+}
+
+.section-hub-card:hover .section-hub-card__icon {
+  color: var(--color-text-secondary);
+}
+
+.section-hub-card__title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.section-hub-card__arrow {
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease,
+    color 0.15s ease;
+}
+
+.section-hub-card:hover .section-hub-card__arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+  color: var(--color-text-secondary);
+}
+
+.section-hub-card__description {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1023px) {
+  .section-hub__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .section-hub__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .section-hub-card {
+    min-height: 0;
+    padding: 16px 18px;
+  }
+
+  .section-hub-card__arrow {
+    opacity: 1;
+    transform: none;
+  }
+}
