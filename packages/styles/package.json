@@ -1,6 +1,6 @@
 {
   "name": "@idalovkh/taqseet-ui-styles",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Global and layout styles for Taqseet UI",
   "repository": {
     "type": "git",
@@ -26,6 +26,6 @@
     "src"
   ],
   "peerDependencies": {
-    "@idalovkh/taqseet-ui-tokens": "^0.1.0"
+    "@idalovkh/taqseet-ui-tokens": "^0.1.1"
   }
 }
