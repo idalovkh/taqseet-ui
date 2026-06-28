@@ -1,11 +1,37 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { createRequire } from 'node:module'
 import fs from 'node:fs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const reactRoot = path.resolve(__dirname, 'src')
-const tokensRoot = path.resolve(__dirname, '../tokens/src')
-const stylesRoot = path.resolve(__dirname, '../styles/src')
+const require = createRequire(import.meta.url)
+
+function resolveTokensCss() {
+  const monorepoEntry = path.resolve(__dirname, '../tokens/src/index.css')
+  if (exists(monorepoEntry)) {
+    return monorepoEntry
+  }
+
+  return require.resolve('@idalovkh/taqseet-ui-tokens')
+}
+
+function resolveStylesGlobalsCss() {
+  const monorepoEntry = path.resolve(__dirname, '../styles/src/globals.css')
+  if (exists(monorepoEntry)) {
+    return monorepoEntry
+  }
+
+  return require.resolve('@idalovkh/taqseet-ui-styles/globals.css')
+}
+
+const librarySrcRoot = path.resolve(__dirname, 'src')
+const hasLibrarySrc = exists(path.resolve(librarySrcRoot, 'index.ts'))
+const reactRoot = hasLibrarySrc ? librarySrcRoot : path.resolve(__dirname, 'dist')
+const reactEntry = hasLibrarySrc
+  ? path.resolve(librarySrcRoot, 'index.ts')
+  : path.resolve(__dirname, 'dist/index.js')
+const tokensRoot = path.dirname(resolveTokensCss())
+const stylesRoot = path.dirname(resolveStylesGlobalsCss())
 
 const MANAGER_LOCAL_OVERRIDES = [
   'ProfileMenu',
@@ -74,12 +100,14 @@ function applyHybridComponentAliases(aliases, localShared) {
   }
 
   const libraryUiPath = path.resolve(reactRoot, 'components')
-  for (const name of fs.readdirSync(libraryUiPath)) {
-    const key = `@/shared/components/ui/${name}`
-    if (!aliases[key]) {
-      const fullPath = path.join(libraryUiPath, name)
-      if (fs.statSync(fullPath).isDirectory()) {
-        aliases[key] = fullPath
+  if (exists(libraryUiPath)) {
+    for (const name of fs.readdirSync(libraryUiPath)) {
+      const key = `@/shared/components/ui/${name}`
+      if (!aliases[key]) {
+        const fullPath = path.join(libraryUiPath, name)
+        if (fs.statSync(fullPath).isDirectory()) {
+          aliases[key] = fullPath
+        }
       }
     }
   }
@@ -118,13 +146,17 @@ export function createTaqseetUiAliases(appRoot, options = {}) {
   const localShared = path.resolve(appRoot, 'src/shared')
 
   const aliases = {
-    '@idalovkh/taqseet-ui-tokens': path.resolve(tokensRoot, 'index.css'),
-    '@idalovkh/taqseet-ui-styles/globals.css': path.resolve(stylesRoot, 'globals.css'),
+    '@idalovkh/taqseet-ui-tokens': resolveTokensCss(),
+    '@idalovkh/taqseet-ui-styles/globals.css': resolveStylesGlobalsCss(),
     '@idalovkh/taqseet-ui-styles': stylesRoot,
-    '@idalovkh/taqseet-ui-react': path.resolve(__dirname, 'src/index.ts'),
+    '@idalovkh/taqseet-ui-react': reactEntry,
   }
 
   if (mode === 'styles-only') {
+    return aliases
+  }
+
+  if (!hasLibrarySrc) {
     return aliases
   }
 
