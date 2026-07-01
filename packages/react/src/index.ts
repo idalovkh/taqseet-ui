@@ -27,6 +27,7 @@ export { useSearchInUrl } from './hooks/useSearchInUrl'
 export { useHorizontalSnapCarousel } from './hooks/useHorizontalSnapCarousel'
 export { useListKpiLabels } from './hooks/useListKpiLabels'
 export { useMaxWidth } from './hooks/useMaxWidth'
+export { useListViewMode, type ListViewMode } from './hooks/useListViewMode'
 export { useAppShellSidebar, type UseAppShellSidebarOptions, type UseAppShellSidebarResult } from './hooks/useAppShellSidebar'
 export { configureMenuBackNavigation, type MenuBackNavigationConfig } from './config/menuBackNavigation'
 export { SUPPORT_CONFIG } from './config/support.config'
@@ -65,6 +66,7 @@ export { GenderSelect, type GenderSelectProps, type GenderValue } from './compon
 export { ErrorMessage } from './components/ErrorMessage'
 export { ErrorBanner } from './components/ErrorBanner'
 export { ConfirmDialog } from './components/ConfirmDialog'
+export { ModalFormActions } from './components/ModalFormActions'
 export { ActionsMenuTrigger } from './components/ActionsMenuTrigger'
 export { SearchInput, type SearchInputProps } from './components/SearchInput'
 export { SearchableSelect, type SearchableSelectProps } from './components/SearchableSelect'
@@ -80,6 +82,18 @@ export {
   type CircleIconButtonVariant,
 } from './components/CircleIconButton'
 export { DatePeriodFilter } from './components/DatePeriodFilter'
+export {
+  DesktopListCardsGrid,
+  DesktopListCard,
+  DesktopListCardPlaceholder,
+  DesktopListCardHeader,
+  DesktopListCardTitle,
+  DesktopListCardStatus,
+  DesktopListCardField,
+  DesktopListCardActions,
+} from './components/DesktopListCard'
+export { DesktopCardsView } from './components/DesktopCardsView'
+export type { DesktopCardsViewProps } from './components/DesktopCardsView'
 export { InfiniteScrollFooter } from './components/InfiniteScrollFooter'
 export { ListScrollFooter } from './components/ListScrollFooter'
 export {
@@ -94,11 +108,13 @@ export type { IosListCardProps, IosListCardRowData, IosListCardTone, MobileCardR
 export { ListIosCardsLayout, type ListIosCardsLayoutVariant } from './components/ListIosCardsLayout'
 export { ListFilterDropdown, ListFiltersCombined } from './components/ListFilter'
 export type { ListFilterDropdownProps, ListFilterOption, FilterOption, FilterGroupConfig } from './components/ListFilter'
+export { ListDataView } from './components/ListDataView'
 export { MobileNavRow, MobileNavGroup, type MobileNavRowProps } from './components/MobileNavRow'
 export { MobileStaticRow, MobileGroupDivider, type MobileStaticRowProps } from './components/MobileStaticRow'
 export { MonthlyBarChart, type BarConfig } from './components/MonthlyBarChart'
 export { NotificationBell } from './components/NotificationBell'
 export { SegmentedControl, type SegmentedControlOption } from './components/SegmentedControl'
+export { ListViewModeToggle } from './components/ListViewModeToggle'
 export { Stepper } from './components/Stepper'
 export { EmptyState, type EmptyStateProps } from './components/EmptyState'
 
@@ -119,6 +135,16 @@ export { SectionHubGrid, type SectionHubGridProps, type SectionHubItem } from '.
 export { ListRouteFallback, type ListRouteFallbackProps } from './components/layout/ListRouteFallback'
 export { AuthPageLayout, type AuthPageLayoutProps } from './components/layout/AuthPageLayout'
 export { AppShellFrame, type AppShellFrameProps } from './components/layout/AppShellFrame'
+export {
+  AppShell,
+  AppShellHeader,
+  AppShellSidebar,
+  type AppShellProps,
+  type AppShellBrand,
+  type AppShellHeaderAction,
+  type AppShellNavItem,
+  type AppShellSubNavItem,
+} from './components/layout/AppShell'
 
 export {
   AccountMenu,

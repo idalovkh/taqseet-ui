@@ -34,6 +34,22 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.segmented-control__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.segmented-control__option--icon-only {
+  flex: 0 0 auto;
+  width: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+}
+
 .segmented-control__option:hover:not(:disabled) {
   color: var(--color-text-primary);
 }

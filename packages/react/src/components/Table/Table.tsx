@@ -80,6 +80,12 @@ export interface TableColumn<T> {
     valueVariant?: 'default' | 'primary' | 'amount'
     dividerBefore?: boolean
   }
+  /** Desktop cards metadata for external cards view components */
+  desktopCard?: {
+    role?: 'heroEyebrow' | 'heroTitle' | 'heroBadge' | 'heroActions' | 'body' | 'hidden'
+    valueVariant?: 'default' | 'primary' | 'amount'
+    dividerBefore?: boolean
+  }
 }
 
 export interface TableProps<T> {
